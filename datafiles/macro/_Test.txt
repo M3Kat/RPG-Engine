@@ -1,0 +1,19 @@
+Hey it works!%PAUSE%\nAt least I hope so...
+Argument0 is $ARG0$! :)
+It's choice time!%CHOICE[Yes,Okay,Sure]%
+%IF[TE_CHOICE,==,0]%%GOTO[_TESTA]%
+%IF[TE_CHOICE,==,1]%%GOTO[_TESTB]%
+%IF[TE_CHOICE,==,2]%%GOTO[_TESTC]%
+...
+%GOTO[_TESTD]%
+%TAG[_TESTA]%
+k
+%GOTO[_TESTD]%
+%TAG[_TESTB]%
+That's cool!
+%GOTO[_TESTD]%
+%TAG[_TESTC]%
+Ye right
+%GOTO[_TESTD]%
+%TAG[_TESTD]%
+Test is completos!

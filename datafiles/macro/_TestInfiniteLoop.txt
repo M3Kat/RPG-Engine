@@ -1,0 +1,5 @@
+%MATH[HACK,=,0]%%NEWLINE%
+%LOOP%
+%INSTANT%You have been hacked %VARIABLE[HACK]% times by\nthe FBI :O\n$ARG0$%WAIT[2]%%NEWLINE%
+%MATH[HACK,+=,1]%%NEWLINE%
+%LOOPEND%

@@ -1,0 +1,9 @@
+%MATH[$ARG0$,+=,1]%%NEWLINE%
+%LOOP%
+%IF[$ARG0$,>=,5]%%LOOPBREAK%
+%ELSE%
+%{%
+This is %VARIABLE[$ARG0$]%.
+%MACRO[_MacroReccursive,$ARG0$]%
+%}%
+%LOOPEND%
