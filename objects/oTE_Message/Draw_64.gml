@@ -97,7 +97,7 @@ draw_rectangle_color(0, 0, surface_width, surface_height, $ff8822, $ff6611, $aa6
 
 if (box_type == _teBoxType.Message && !instance_exists(child) && pause)
 {
-	draw_sprite(TE_Cursor_Down, image_index, surface_width / 2, surface_height - 8);
+	draw_sprite(sTE_Cursor_Down, image_index, surface_width / 2, surface_height - 8);
 }
 if (box_type == _teBoxType.Choice)
 {

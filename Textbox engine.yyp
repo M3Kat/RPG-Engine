@@ -39,6 +39,14 @@
             }
         },
         {
+            "Key": "03a9b447-ac2f-4816-92b6-67762669d862",
+            "Value": {
+                "id": "806105a4-8f8a-41be-9c4c-4b2de682a4a7",
+                "resourcePath": "scripts\\NPC_init\\NPC_init.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "0a5cf074-57c4-4cce-b856-1647c24fe191",
             "Value": {
                 "id": "9aafeadf-76f9-42a9-b3ae-b81a1e53cd37",
@@ -60,6 +68,14 @@
                 "id": "586703f6-91c0-4835-8adf-ec94ec557813",
                 "resourcePath": "scripts\\TE_script_macrogoto\\TE_script_macrogoto.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "0f559de2-9465-4769-abab-6f7757450ee0",
+            "Value": {
+                "id": "2a598712-4e7c-4e0d-9f54-6681260cc557",
+                "resourcePath": "sprites\\sNPC_Default_Up\\sNPC_Default_Up.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -207,6 +223,14 @@
             }
         },
         {
+            "Key": "2b995e3c-e213-4353-8602-f0bd49e327c4",
+            "Value": {
+                "id": "e79fbcc8-fce0-4a50-a6aa-c758ff6e48b5",
+                "resourcePath": "sprites\\sNPC_Default_Down\\sNPC_Default_Down.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "2cc6ca1b-6cbc-4ee7-ab1b-9e1a530f5222",
             "Value": {
                 "id": "553a26e9-1bf5-426f-a24c-edbc737b41e8",
@@ -220,6 +244,14 @@
                 "id": "d88d748d-d1cd-4cd7-a5b2-48b94aff5b6f",
                 "resourcePath": "scripts\\nsp_string_crop_ext\\nsp_string_crop_ext.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "3114e8f3-5568-4c34-b99d-7c25384787a7",
+            "Value": {
+                "id": "5e12a5ec-92eb-44c4-9120-5a52d60ae8b6",
+                "resourcePath": "sprites\\sNPC_Default_Right\\sNPC_Default_Right.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -243,6 +275,14 @@
             "Value": {
                 "id": "d127f715-0821-48f3-a8dd-e8073459f8a5",
                 "resourcePath": "scripts\\NSP_initialize\\NSP_initialize.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "3625ed56-a38b-48f6-8e8c-84da9c700f43",
+            "Value": {
+                "id": "84ac3aea-6d28-4f36-91dd-66424670e361",
+                "resourcePath": "scripts\\NPC_create\\NPC_create.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -447,6 +487,14 @@
             }
         },
         {
+            "Key": "5612eba1-e33d-48a7-b231-fae212110859",
+            "Value": {
+                "id": "0b7a6916-b8b3-4fc8-a5c8-568250ec0bbf",
+                "resourcePath": "views\\5612eba1-e33d-48a7-b231-fae212110859.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "591db1e9-b76f-496b-9dcd-00b827013d66",
             "Value": {
                 "id": "57e515cb-5700-40cc-9ad5-f01498868b70",
@@ -572,6 +620,14 @@
                 "id": "8aac9040-3f23-436e-bb1e-8ac01979c1d5",
                 "resourcePath": "views\\71d074d2-55b8-48ae-a373-68953b1f1654.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "72ab5b35-43c1-47f3-84ec-219f69502886",
+            "Value": {
+                "id": "0b62743e-4893-4495-9f9a-3a26e39f070c",
+                "resourcePath": "scripts\\TE_get_variable\\TE_get_variable.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -879,6 +935,14 @@
             }
         },
         {
+            "Key": "a854b0c6-b87c-409b-bd30-2e1ff528e21f",
+            "Value": {
+                "id": "77d5e3e7-5983-4c1f-b34e-6dacad74c306",
+                "resourcePath": "sprites\\sNPC_Default_Left\\sNPC_Default_Left.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "a9188620-a624-4a5a-83ae-a1b53faf038b",
             "Value": {
                 "id": "f2a8be03-81f8-4df0-a3c8-ba9409e41c2f",
@@ -1023,6 +1087,14 @@
             }
         },
         {
+            "Key": "c5f8d062-ead2-48a8-8c2f-6fec3852411d",
+            "Value": {
+                "id": "c1c18652-b718-4e86-a41a-7d7a68178d66",
+                "resourcePath": "objects\\oNPC_Actor\\oNPC_Actor.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "c649d40a-1024-4a6d-ae8c-42c617114f5d",
             "Value": {
                 "id": "5cb40a15-1284-4bac-9e4a-ca17de215f93",
@@ -1076,6 +1148,14 @@
                 "id": "51f3feec-562e-462f-940d-df2ec5153e55",
                 "resourcePath": "objects\\oTE_Test\\oTE_Test.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "d51938e4-0364-430f-8797-7583cc3ad0e9",
+            "Value": {
+                "id": "3467d21a-ed4c-4f7f-94c5-757e76437df5",
+                "resourcePath": "views\\d51938e4-0364-430f-8797-7583cc3ad0e9.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -1154,7 +1234,7 @@
             "Key": "e958b45f-01e2-471f-9a66-ddd348f9a939",
             "Value": {
                 "id": "13b21fba-9aaf-45f3-884d-0363b36d50e4",
-                "resourcePath": "sprites\\TE_Cursor_Down\\TE_Cursor_Down.yy",
+                "resourcePath": "sprites\\sTE_Cursor_Down\\sTE_Cursor_Down.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1232,6 +1312,7 @@
         "5fc730bd-cf64-4da6-b991-8fd4c3b1486e",
         "3c17c58f-352d-4e67-a49c-f31cc2bce927",
         "138e73fb-debb-42be-910b-9d26ffc3569b",
+        "72ab5b35-43c1-47f3-84ec-219f69502886",
         "0b5b4bc9-b98b-46bf-b9bc-7649a4517351",
         "511bedab-b429-450e-831d-3169ced86c5a",
         "657d624c-0167-4aea-b68d-6be59a8e4ce2",
@@ -1255,6 +1336,8 @@
         "0ecad2b9-a7e4-4d61-ba49-4b1ac1bd4fa0",
         "970b8831-9f3d-43c4-b776-ab4b2ea2a749",
         "f4c95fb4-40db-4366-b7eb-8e2f26c48183",
+        "03a9b447-ac2f-4816-92b6-67762669d862",
+        "3625ed56-a38b-48f6-8e8c-84da9c700f43",
         "ea06d46a-224c-4c5b-907e-7474bfeefc06",
         "34dccc92-7d0b-40de-ba74-98c826dabbaf",
         "51aafa15-1058-467a-988a-ee5237bf33f4",
