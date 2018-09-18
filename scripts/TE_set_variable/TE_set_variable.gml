@@ -1,5 +1,6 @@
-/// @description Get value of specific variable
+/// @description Set value of specific variable
 /// @arg NPC###.||VAR.
+/// @arg value
 
 #region Temp Variable
 
@@ -46,27 +47,21 @@ if (string_copy(varname, 1, 3) == "NPC")
 			break;
 		}
 	}
-	npcval = variable_instance_get(npcid, npcvar);														// Get Variable ID
-	return string(npcval);																						// Return NPC variable
+	npcval = variable_instance_set(npcid, npcvar, argument1);											// Set Variable ID
+	return;
 }
 
 #endregion
 
 #region VAR TAG
 
-if (string_copy(varname, 1, 4) == "VAR." || string_count("VAR.", varname) == 0)
+if (string_copy(varname, 1, 4) == "VAR."  || string_count("VAR.", varname) == 0)
 {
 	var varstring	= "";																				// Name of variable
 	var varlength	= string_length(varname) - 4;														// Length of variable name (quick method, MAGIC NUMBER owo)
-	var varval		= 0;
 	varstring = string_copy(varname, 5, varlength);
-	// Does variable exists?
-	if (!ds_map_exists(global.nspDsMap, varstring))
-	{
-		global.nspDsMap[? varstring] = 0;
-	}
-	varval = global.nspDsMap[? varstring];
-	return varval;
+	global.nspDsMap[? varstring] = argument1;
+	return;
 }
 
 #endregion

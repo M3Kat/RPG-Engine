@@ -14,8 +14,11 @@ var cmdarglist	= ds_list_create();																							// Create list of argum
 var cmdstr		= "";																										// Full substring
 var cmdsub		= "";																										// Individual argument strings
 
+//var arrayreturn = array_create(_teCmdArray.enum_end, undefined);															// Array to return when finishing executing cmd
+
 arrayreturn[_teCmdArray.charDelete]		= 0;																				// # of characters to delete (if set to -1, don't delete characters)
-arrayreturn[_teCmdArray.charReplace]	= undefined;																				// String to insert after deletion
+//arrayreturn[_teCmdArray.charReplace]	= undefined;																		// String to insert after deletion
+//arrayreturn[_teCmdArray.charData]		= undefined;																		// String to insert after deletion
 
 var i,j;																													// Loop variables
 
@@ -72,13 +75,26 @@ switch (cmdarglist[| 0])
 		TE_script_color(argarray);
 		break;
 	case "CHARPOS"		:
-		argarray	= array_create(ds_list_size(cmdarglist) - 1, -1);
+		var argarray	= array_create(ds_list_size(cmdarglist) - 1, -1);
 		// Copy number of arguments inside array
 		for (i = 0; i < array_length_1d(argarray); i++)
 		{
 			argarray[i] = cmdarglist[| i+1];
 		}
 		TE_script_charpos(argarray);
+		break;
+	case "CHARW"		:
+		var argarray = TE_get_script_arguments(cmdarglist);
+		TE_script_charwidth(argarray);
+		break;
+	case "CHARHALIGN"	:
+		var arg1	= cmdarglist[| 1];
+		TE_script_charhalign(arg1);
+		break;
+	case "LONGCHAR"		:
+		// arg1 = Full string
+		var argarray = TE_get_script_arguments(cmdarglist);
+		TE_script_longchar(argarray);
 		break;
 	case "GOTO"			:
 		var arg1	= cmdarglist[| 1];
@@ -104,7 +120,7 @@ switch (cmdarglist[| 0])
 		break;
 	case "VARIABLE"		:
 		var arg1	= cmdarglist[| 1];
-		arrayreturn[1] = TE_script_variable(arg1);
+		arrayreturn[_teCmdArray.charReplace] = TE_script_variable(arg1);
 		break;
 	case "IF"			:
 		var arg1	= cmdarglist[| 1];

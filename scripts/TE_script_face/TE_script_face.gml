@@ -7,8 +7,12 @@ var vframe	= real(argument1);
 
 #endregion
 
-if (!is_undefined(vsprite))
+if (vsprite != -1)
 {
 	face_sprite		= vsprite;
 	face_subsprite	= vframe;
+}
+else
+{
+	face_sprite		= undefined;
 }

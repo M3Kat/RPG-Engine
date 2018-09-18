@@ -4,6 +4,8 @@
 // TEMP CONTROLS
 var i;
 var butt;
+var spritearray;
+
 for (i = 0; i < 4; i++)
 {
 	switch (i)
@@ -33,42 +35,62 @@ for (i = 0; i < 4; i++)
 	}
 }
 
-if (keyboard_check(vk_up)
+if (keyboard_check(vk_up))
 {
 	y--;
 	npc_face_direction = _npcOrientation.up;
 }
-if (keyboard_check(vk_right)
+if (keyboard_check(vk_right))
 {
 	x++;
 	npc_face_direction = _npcOrientation.right;
 }
-if (keyboard_check(vk_down)
+if (keyboard_check(vk_down))
 {
 	y++;
 	npc_face_direction = _npcOrientation.down;
 }
-if (keyboard_check(vk_left)
+if (keyboard_check(vk_left))
 {
 	x--;
 	npc_face_direction = _npcOrientation.left;
 }
 
+if (!iswalking)
+{
+	switch (npc_face_direction)
+	{
+		case _npcOrientation.up	:
+			spritearray = sprite_grid[# _npcAnimState.idle, _npcOrientation.up];
+			break;
+		case _npcOrientation.right	:
+			spritearray = sprite_grid[# _npcAnimState.idle, _npcOrientation.right];
+			break;
+		case _npcOrientation.down	:
+			spritearray = sprite_grid[# _npcAnimState.idle, _npcOrientation.down];
+			break;
+		case _npcOrientation.left	:
+			spritearray = sprite_grid[# _npcAnimState.idle, _npcOrientation.left];
+			break;
+	}
+}
 if (iswalking)
 {
 	switch (npc_face_direction)
 	{
 		case _npcOrientation.up	:
-			sprite_index = sprite_map[? _npcAnimState.idle_up];
+			spritearray = sprite_grid[# _npcAnimState.walk, _npcOrientation.up];
 			break;
 		case _npcOrientation.right	:
-			sprite_index = sprite_map[? _npcAnimState.idle_right];
+			spritearray = sprite_grid[# _npcAnimState.walk, _npcOrientation.right];
 			break;
 		case _npcOrientation.down	:
-			sprite_index = sprite_map[? _npcAnimState.idle_down];
+			spritearray = sprite_grid[# _npcAnimState.walk, _npcOrientation.down];
 			break;
 		case _npcOrientation.left	:
-			sprite_index = sprite_map[? _npcAnimState.idle_left];
+			spritearray = sprite_grid[# _npcAnimState.walk, _npcOrientation.left];
 			break;
 	}
 }
+sprite_index	= spritearray[_npcAnimData.sprite];
+image_speed		= spritearray[_npcAnimData.animSpeed];

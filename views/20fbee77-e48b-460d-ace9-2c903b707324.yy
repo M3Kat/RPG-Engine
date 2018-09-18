@@ -19,13 +19,16 @@
         "b544ffa4-aaf1-4aa6-b1f8-eccaa69b7ad2",
         "6f8c47cd-6401-4b37-ada8-3ad4a1d3d0f6",
         "c2ed4a42-fd37-496f-9b08-290b19c9f970",
+        "af8525fa-2437-48be-ae53-65c7862584ca",
         "60b22e38-df16-413d-af75-175a931dcbd1",
         "c8770599-a98f-4513-a5e9-1cb0eda21193",
         "29ec9c4f-aacb-4df7-abcc-4fdd46f72def",
         "4346c337-98ab-43d0-8d2c-0846f218c0c2",
         "0ecad2b9-a7e4-4d61-ba49-4b1ac1bd4fa0",
         "970b8831-9f3d-43c4-b776-ab4b2ea2a749",
-        "f4c95fb4-40db-4366-b7eb-8e2f26c48183"
+        "f4c95fb4-40db-4366-b7eb-8e2f26c48183",
+        "b02a2bbd-f430-4d36-91d3-eea9d7071666",
+        "441bfe16-d5d1-459e-b711-513bbd0674a0"
     ],
     "filterType": "GMScript",
     "folderName": "TE_Script_Commands",

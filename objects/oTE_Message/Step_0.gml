@@ -2,7 +2,8 @@
 
 #region Temp Variables
 
-var cmdarray;																									// Gets value from TE_execute_script and is used to modify the string
+var cmdarray;																								// Gets value from TE_execute_script and is used to modify the string
+//var arrayreturn;																							// Data to return from a cmd
 
 #endregion
 
@@ -73,14 +74,14 @@ if (!pause && !wait && !finished)
 		// Increment number of characters
 		while (floor(abs(speed_buffer >= 1)))
 		{	
+			// Reset array return before executing script
+			arrayreturn = array_create(_teCmdArray.enum_end, undefined);
+			arrayreturn[_teCmdArray.charData] = array_create(_teCharData.enum_end, undefined);
 			// Execute script if current character in the index is "%"
 			while (string_char_at(line_copy, index_char) == "%" && !pause && !wait)
 			{
-				// Reset array return before executing script
-				arrayreturn = array_create(_teCmdArray.enum_end, undefined);
 				// Get command
-				arrayreturn = array_create(_teCmdArray.enum_end, 0);
-				TE_execute_script(line_copy, index_char);
+				arrayreturn = TE_execute_script(line_copy, index_char);
 				if (arrayreturn[_teCmdArray.charDelete] != undefined)	index_char	+= clamp(arrayreturn[_teCmdArray.charDelete], 0, string_length(line_copy));			// Advance current cursor position based on length
 				if (arrayreturn[_teCmdArray.charReplace] != undefined)	line_copy	= string_insert(arrayreturn[_teCmdArray.charReplace], line_copy, index_char);		// Insert new string inside text
 			}
@@ -94,13 +95,13 @@ if (!pause && !wait && !finished)
 			
 			// Copy char inside string_display
 			var charcopy = string_char_at(line_copy, index_char);												// Copy current character
-			var chararray = array_create(_teCharData.enum_end, undefined);										// Create empty data array
+			var chararray = arrayreturn[_teCmdArray.charData];													// Copy data array
 			var i = ds_list_size(char_list);																	// Get size of ds list
 			
-			chararray[_teCharData.character]	= charcopy;														// Copy character
+			if (chararray[_teCharData.character] == undefined) chararray[_teCharData.character]	= charcopy;		// Copy character
 			chararray[_teCharData.font]			= undefined;													// Set font
 			chararray[_teCharData.color]		= char_color;													// Set color
-			
+			chararray[_teCharData.halign]		= char_halign;													// Set halign
 			
 			char_list[| i] = chararray;																			// Insert array into ds list
 			

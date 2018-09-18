@@ -34,8 +34,30 @@ for (i = 0; i < _npcAnimState.enum_end; i++)
 				arraycopy[_npcAnimData.animSpeed] = 1;
 				break;
 		}
+		sprite_grid[# i, j] = arraycopy;
 	}
 }
 
 npc_state			= _npcAnimState.idle;
 npc_face_direction	= _npcOrientation.down;
+
+#region Prevent NPC having same tag
+/*
+var tagdiff = true;																											// Create temp variable boolean to break loop
+while (tagdiff)
+{
+	tagdiff = false;																										// Set tagdiff to false to break loop
+	// Scan every NPC
+	with (oNPC_Actor)
+	{
+		// Does another NPC has the same tag?
+		if (npc_tag == other.npc_tag && id != other.id)
+		{
+			other.npc_tag++;																								// Increment other tag
+			tagdiff = true;
+			break;
+		}
+	}
+}
+*/
+#endregion

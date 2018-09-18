@@ -14,22 +14,22 @@ arg[1] = Char Y
 #region Temp variables
 
 var arg1,arg2;
-var chararraycopy	= char_list[| char_index];
+var chararraycopy	= arrayreturn[_teCmdArray.charData];
 
 #endregion
 
-
 if (array_length_1d(argument0) == 1)
 {
-	arg1 = argument0[@ 0];
-	arg2 = -1;
+	arg1 = real(argument0[@ 0]);
+	arg2 = undefined;
 }
 else
 {
 	arg1 = real(argument0[@0]);
 	arg2 = real(argument0[@1]);
 }
-chararraycopy[_teCharData.setX]	= arg1;
-chararraycopy[_teCharData.setY]	= arg2;
+chararraycopy[@_teCharData.setX]	= arg1;
+chararraycopy[@_teCharData.setY]	= arg2;
 
+//argument0[@_teCmdArray.charData] = chararraycopy;
 //charlist

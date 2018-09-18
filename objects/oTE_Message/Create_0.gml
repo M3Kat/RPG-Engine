@@ -25,6 +25,7 @@ speed_buffer_mode	= _teSpdBufferMode.normal;																						// Current mod
 
 char_list			= ds_list_create();																								// Create list containing all characters and their parameters
 char_color			= $ffffff;																										// Current character color
+char_halign			= fa_left;																										// Current alignment of characters
 
 face_sprite			= undefined;																									// Face sprite to display in tbe corner
 face_subsprite		= 0;																											// Frame to use
@@ -48,6 +49,6 @@ child				= noone;																										// Textbox's newly executed
 
 condition[0]		= false;																										// Set result of condition on each bracket level
 
-arrayreturn			= 0;
+arrayreturn			= undefined;
 
 finished			= false;																										// Destroy instance if true

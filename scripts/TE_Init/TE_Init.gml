@@ -2,6 +2,7 @@
 
 #macro TE_CHAR_HEIGHT 12
 #macro TE_DEFAULT_TEXT_SOUND sfxTE_Text_Default
+#macro TE_BORDER_SIZE 8
 
 #region Enum containing commands
 
@@ -16,6 +17,7 @@ enum _teCmdArray
 {
 	charDelete,																						// Number of characters to delete
 	charReplace,																					// String to insert after execution of command
+	charData,																						// Data to put inside character
 	enum_end
 }
 
@@ -33,6 +35,9 @@ enum _teCharData
 	font,
 	setX,
 	setY,
+	setW1,
+	setW2,
+	halign,
 	enum_end
 }
 

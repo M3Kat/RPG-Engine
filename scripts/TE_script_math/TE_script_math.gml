@@ -6,6 +6,7 @@ var target	= argument0;
 var symbol	= argument1;
 var formula	= argument2;
 
+var get = 0;
 var result	= 0;
 
 #endregion
@@ -15,48 +16,64 @@ if (!is_undefined(formula))
 {
 	result = NSP_evaluate(formula);
 }
+// Get variable
+get = real(TE_get_variable(target));
 // Do the math
 switch (symbol)
 {
 	case "=" :
-		global.nspDsMap[? target] = result;
+		get		= result;
+		//global.nspDsMap[? target] = result;
 		break;
 	case "+=" :
-		global.nspDsMap[? target] += result;
+		get		+= result;
+		//global.nspDsMap[? target] += result;
 		break;
 	case "-=" :
-		global.nspDsMap[? target] -= result;
+		get		-= result;
+		//global.nspDsMap[? target] -= result;
 		break;
 	case "*=" :
-		global.nspDsMap[? target] *= result;
+		get		*= result;
+		//global.nspDsMap[? target] *= result;
 		break;
 	case "/=" :
-		global.nspDsMap[? target] /= result;
+		get		/= result;
+		//global.nspDsMap[? target] /= result;
 		break;
 	case "MOD" :
-		global.nspDsMap[? target] %= result;
+		get		%= result;
+		//global.nspDsMap[? target] %= result;
 		break;
 	case "ROUND" :
-		global.nspDsMap[? target] = round(global.nspDsMap[? target]);
+		get		= round(get);
+		//global.nspDsMap[? target] = round(global.nspDsMap[? target]);
 		break;
 	case "FLOOR" :
-		global.nspDsMap[? target] = floor(global.nspDsMap[? target]);
+		get		= floor(get);
+		//global.nspDsMap[? target] = floor(global.nspDsMap[? target]);
 		break;
 	case "CEIL" :
-		global.nspDsMap[? target] = ceil(global.nspDsMap[? target]);
+		get		= ceil(get);
+		//global.nspDsMap[? target] = ceil(global.nspDsMap[? target]);
 		break;
 	case "ABS"	:
-		global.nspDsMap[? target] = abs(result);
+		get		= abs(get);
+		//global.nspDsMap[? target] = abs(result);
 		break;
 	case "SIN"	:
-		global.nspDsMap[? target] *= sin(result);
+		get		= sin(get);
+		//global.nspDsMap[? target] *= sin(result);
 		break;
 	case "COS"	:
-		global.nspDsMap[? target] *= cos(result);
+		get		= cos(get);
+		//global.nspDsMap[? target] *= cos(result);
 		break;
 	case "TAN"	:
-		global.nspDsMap[? target] *= tan(result);
+		get		= tan(get);
+		//global.nspDsMap[? target] *= tan(result);
 		break;
 }
+TE_set_variable(argument0, get);
 
 #endregion
