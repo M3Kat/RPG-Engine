@@ -4,7 +4,8 @@ surface_width		= 320;																											// Default width
 surface_height		= 64; //TE_CHAR_HEIGHT*4;																						// Default height
 surface_x			= 0;																											// Default x
 surface_y			= 176;																											// Default y
-surface				= surface_create(surface_width,surface_height);																	// Create New surface
+surface				= noone;																										// Create empty surface variable
+TE_create_surface();																												// Create New surface
 
 line				= ds_list_create();																								// Create ds list containing game lines
 line_copy			= undefined;																									// String containg copy of current line
@@ -43,6 +44,8 @@ box_type			= _teBoxType.Message;																							// Type of box
 
 cursor_pos			= 0;																											// Cursor position
 cursor_options      = 0;																											// Number of options available for selection
+
+ask_char_array		= array_create(6,0); 
 
 parent				= noone;																										// Textbox's original caller
 child				= noone;																										// Textbox's newly executed

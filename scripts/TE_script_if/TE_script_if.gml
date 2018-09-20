@@ -5,7 +5,7 @@
 
 #region Temp variables
 
-var variable = global.nspDsMap[? argument0];
+var variable = TE_get_variable(argument0);
 var equation = NSP_evaluate(argument2);																	// Calculate equation
 
 var result = false;																						// Temp var

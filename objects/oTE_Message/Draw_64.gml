@@ -1,6 +1,7 @@
 /// @description Draw textbox
 // You can write your code in this editor
 
+TE_create_surface();																							// Recreate surface incase it's gone
 event_user(0);																									// TEMP RESIZE SURFACE
 surface_set_target(surface);																					// Set target to textbox surface
 draw_rectangle_color(0, 0, surface_width, surface_height, $ff8822, $ff6611, $aa6622, $aa6611, false);
@@ -37,6 +38,7 @@ draw_rectangle_color(0, 0, surface_width, surface_height, $ff8822, $ff6611, $aa6
 	
 	#endregion
 	
+	#region Normal Message & Choice
 	// Draw face
 	if (!is_undefined(face_sprite))
 	{
@@ -153,8 +155,23 @@ draw_rectangle_color(0, 0, surface_width, surface_height, $ff8822, $ff6611, $aa6
 		
 		
 	}
-
+	#endregion
+	
+	#region Ask Real
+	
+	if (box_type = _teBoxType.AskReal)
+	{
+		for (i = 0; i < array_length_1d(ask_char_array); i++)
+		{
+			c_char	= ask_char_array[i];
+			draw_text(TE_BORDER_SIZE+i*TE_CHAR_HEIGHT,TE_BORDER_SIZE,c_char);
+		}
+	}
+	
+	#endregion
+	
 #endregion
+	
 
 if (box_type == _teBoxType.Message && !instance_exists(child) && pause)
 {
@@ -163,7 +180,12 @@ if (box_type == _teBoxType.Message && !instance_exists(child) && pause)
 if (box_type == _teBoxType.Choice)
 {
 	draw_set_color($ffffff);
-	draw_rectangle(8,TE_CHAR_HEIGHT*(cursor_pos)+8,surface_width-1-8,TE_CHAR_HEIGHT*(cursor_pos+1)-1+8, true);
+	draw_rectangle(8,TE_CHAR_HEIGHT*(cursor_pos)+8,surface_width-1-TE_BORDER_SIZE,TE_CHAR_HEIGHT*(cursor_pos+1)-1+8, true);
+}
+if (box_type == _teBoxType.AskReal)
+{
+	draw_set_color($ffffff);
+	draw_rectangle(TE_CHAR_HEIGHT*cursor_pos+TE_BORDER_SIZE-4,TE_BORDER_SIZE-4,TE_CHAR_HEIGHT*(cursor_pos+1)-1+TE_BORDER_SIZE-4,TE_CHAR_HEIGHT+TE_BORDER_SIZE, true);
 }
 surface_reset_target();																							// Return to application surface
 draw_surface(surface, surface_x, surface_y);																	// Draw surface

@@ -3,21 +3,17 @@ surface_resize(application_surface, 640, 480);
 room_set_height(room, 240);
 room_set_height(room, 320);
 
-TE_Init();
-
-NSP_initialize();
-
 var txtid = TE_create();
 
 
 TE_add_line(txtid, "%NEWLINE%");
-TE_add_line(txtid, "%LOOP%");
+/*TE_add_line(txtid, "%LOOP%");
 TE_add_line(txtid, "%INSTANT%105=%VARIABLE[NPC105.test]%, 1010=%VARIABLE[NPC1010.test]%, 248=%VARIABLE[NPC248.test]%%WAIT[2]%%NEWLINE%");
 TE_add_line(txtid, "%MATH[NPC105.test,+=,3]%%NEWLINE%");
 TE_add_line(txtid, "%MATH[NPC1010.test,+=,2]%%NEWLINE%");
 TE_add_line(txtid, "%MATH[NPC248.test,+=,1]%%NEWLINE%");
 TE_add_line(txtid, "%LOOPBREAK%");
-TE_add_line(txtid, "%LOOPEND%");
+TE_add_line(txtid, "%LOOPEND%");*/
 //TE_add_line(txtid, "%MACRO[_TestInfiniteLoop,YOU DEVIOUS MANIGANCER!!!]%");
 //TE_add_line(txtid, "%MATH[APPLE,=,0]%%NEWLINE%");
 //TE_add_line(txtid, "%MACRO[_MacroReccursive,APPLE]%");
@@ -40,12 +36,14 @@ TE_add_line(txtid, "%LOOPEND%");*/
 TE_add_line(txtid, "%FACE[sTE_Facetest,4]%Hi!%WAIT[20]%%FACE[sTE_Facetest,4]%This is the textbox engine\nby Quaker Oats :)");
 TE_add_line(txtid, "%FACE[sTE_Facetest,1]%It is quite barebone right now%WAIT[10]%%FACE[sTE_Facetest,0]%\nbut with time it should become\ngood enough for game use");
 //TE_add_line(txtid, "%MATH[TEST,=,25]%%GOTO[1234]%.");
-TE_add_line(txtid, "Select section of demo!%CHOICE[&COLOR[c_red]&Pause,&COLOR[c_yellow]&Math,&COLOR[0,255,255]&Condition,&COLOR[c_black]&Macro,&COLOR[255,255,64]&Charpos]%");
+TE_add_line(txtid, "Select section of demo!%CHOICE[&COLOR[c_red]&Pause,&COLOR[c_white]&Music,&COLOR[c_yellow]&Math,&COLOR[0,255,255]&Condition,&COLOR[c_black]&Macro,&COLOR[255,255,64]&Charpos,Number Input]%");
 TE_add_line(txtid, "%IF[TE_CHOICE,==,0]% %GOTO[PAUSE]%");
-TE_add_line(txtid, "%IF[TE_CHOICE,==,1]% %GOTO[MATH]%");
-TE_add_line(txtid, "%IF[TE_CHOICE,==,2]% %GOTO[IF]%");
-TE_add_line(txtid, "%IF[TE_CHOICE,==,3]% %GOTO[MACRO]%");
-TE_add_line(txtid, "%IF[TE_CHOICE,==,4]% %GOTO[CHARPOS]%");
+TE_add_line(txtid, "%IF[TE_CHOICE,==,1]% %GOTO[MUSIC]%");
+TE_add_line(txtid, "%IF[TE_CHOICE,==,2]% %GOTO[MATH]%");
+TE_add_line(txtid, "%IF[TE_CHOICE,==,3]% %GOTO[IF]%");
+TE_add_line(txtid, "%IF[TE_CHOICE,==,4]% %GOTO[MACRO]%");
+TE_add_line(txtid, "%IF[TE_CHOICE,==,5]% %GOTO[CHARPOS]%");
+TE_add_line(txtid, "%IF[TE_CHOICE,==,6]% %GOTO[INPUTNUM]%");
 TE_add_line(txtid, "%FACE[sTE_Facetest,5]%...");
 TE_add_line(txtid, "%TAG[PAUSE]%");
 TE_add_line(txtid, "%FACE[sTE_Facetest,0]%Press SPACE to advance text%PAUSE%%FACE[sTE_Facetest,4]%\nYOU DID IT :D");
@@ -58,6 +56,20 @@ TE_add_line(txtid, "%FACE[sTE_Facetest,5]%There's a bug in the matrix and IT'S A
 TE_add_line(txtid, "%FACE[sTE_Facetest,1]%Disregard the success message, k thx");
 TE_add_line(txtid, "%TAG[CUCK]%");
 TE_add_line(txtid, "%FACE[sTE_Facetest,4]%SUCCESS :>");
+TE_add_line(txtid, "%TAG[MUSIC]%");
+TE_add_line(txtid, "What about some music?%WAIT[20]%\nWould you like some?%CHOICE[FUCK YEAH LET'S ROCK!!!,I hate music.]%");
+TE_add_line(txtid, "%IF[TE_CHOICE,==,0]%%GOTO[MUSIC_OK]%");
+TE_add_line(txtid, "Oh...");
+TE_add_line(txtid, "%GOTO[MATH]%");
+TE_add_line(txtid, "%TAG[MUSIC_OK]%");
+TE_add_line(txtid, "What kind of music do you want?%CHOICE[canyon.mid,DRAGON FORCE,Solstice,Bad Company by Bad Company]%");
+TE_add_line(txtid, "%IF[TE_CHOICE,==,0]%%ME_PLAYMUSIC[_test,5,1.5]%HAHA!!! EARRAPE%PAUSE%%GOTO[MUSIC_END]%");
+TE_add_line(txtid, "%IF[TE_CHOICE,==,1]%%ME_PLAYMUSIC[_ttfaf]%YEAH BABY, THAT'S THE SPIRIT!!!%PAUSE%%GOTO[MUSIC_END]%");
+TE_add_line(txtid, "%IF[TE_CHOICE,==,2]%%ME_PLAYMUSIC[_solstice]%Watch your temper cuz it's time for\nSOLSTICE!!!!!!!1!! >:)%PAUSE%%GOTO[MUSIC_END]%");
+TE_add_line(txtid, "%IF[TE_CHOICE,==,3]%%ME_PLAYMUSIC[_badcompany]%VERY COOL!!!%PAUSE%%GOTO[MUSIC_END]%");
+TE_add_line(txtid, "%TAG[MUSIC_END]%");
+TE_add_line(txtid, "Another choice?%CHOICE[Ye,Nah]%");
+TE_add_line(txtid, "%IF[TE_CHOICE,==,0]%%GOTO[MUSIC_OK]%");
 TE_add_line(txtid, "%TAG[MATH]%");
 TE_add_line(txtid, "%FACE[sTE_Facetest,1]%Now it's math time!");
 TE_add_line(txtid, "%FACE[sTE_Facetest,0]%%MATH[TEST,=,50]%TEST variable is set to %VARIABLE[TEST]%.");
@@ -65,7 +77,7 @@ TE_add_line(txtid, "%FACE[sTE_Facetest,1]%%VARIABLE[TEST]% + 15 %MATH[TEST,+=,15
 TE_add_line(txtid, "%FACE[sTE_Facetest,2]%%VARIABLE[TEST]% - 20 %MATH[TEST,-=,20]% == %VARIABLE[TEST]%.");
 TE_add_line(txtid, "%TAG[1234]%");
 TE_add_line(txtid, "%FACE[sTE_Facetest,3]%(%VARIABLE[TEST]% / 3) + 5 %MATH[TEST,/=,3]%%MATH[TEST,+=,5]%==%VARIABLE[TEST]%.");
-TE_add_line(txtid, "%FACE[sTE_Facetest,4]%%VARIABLE[TEST]% * %VARIABLE[TEST]% %MATH[TEST,*=,VAR.TEST]%== %VARIABLE[TEST]%.");
+TE_add_line(txtid, "%FACE[sTE_Facetest,4]%%VARIABLE[TEST]% * %VARIABLE[TEST]% %MATH[VAR.TEST,*=, 0 + VAR.TEST]%== %VARIABLE[TEST]%.");
 TE_add_line(txtid, "%FACE[sTE_Facetest,5]%%VARIABLE[TEST]% mod 16 %MATH[TEST,MOD,16]%== %VARIABLE[TEST]%.");
 TE_add_line(txtid, "%FACE[sTE_Facetest,2]%TEST is now %VARIABLE[TEST]%.%WAIT[30]%%PAUSE%\nAren't maths so.%WAIT[5]%.%WAIT[5]%. %WAIT[20]%%FACE[sTE_Facetest,1]%MAGICAL?!?!?!?");
 TE_add_line(txtid, "%TAG[IF]%");
@@ -96,6 +108,18 @@ TE_add_line(txtid, "%INSTANT%777777777777777777777777777777777777777777777777777
 TE_add_line(txtid, "%CHARW[0,160]%%INSTANT%77777777777777777777777777777777777777777777777777777777777777777777777777777777");
 TE_add_line(txtid, "%CHARW[160,320]%%INSTANT%77777777777777777777777777777777777777777777777777777777777777777777777777777777");
 TE_add_line(txtid, "%CHARW[80,240]%%INSTANT%77777777777777777777777777777777777777777777777777777777777777777777777777777777");
-TE_add_line(txtid, "");
+TE_add_line(txtid, "%TAG[INPUTNUM]%");
+TE_add_line(txtid, "Can I ask you a question?%PAUSE%\nWhat year is it?%ASKREAL[4,2000]%");
+TE_add_line(txtid, "%IF[VAR.TE_ASKREAL,==,2018]%Ah, %WAIT[10]%what a relief!%PAUSE%%GOTO[INPUTNUM_END]%");
+TE_add_line(txtid, "%IF[VAR.TE_ASKREAL,==,2084]%SHIT THE ROBOT INVASION\nIS COMING!!!!!!%PAUSE%%GOTO[INPUTNUM_END]%");
+TE_add_line(txtid, "%IF[VAR.TE_ASKREAL,==,1984]%Big Brother is watching ya!%PAUSE%%GOTO[INPUTNUM_END]%");
+TE_add_line(txtid, "%IF[VAR.TE_ASKREAL,==,2000]%%LONGCHAR[BUG]%%WAIT[5]%%LONGCHAR[BUG]%%WAIT[5]%%LONGCHAR[BUG]%%WAIT[5]%%LONGCHAR[BUG]%%WAIT[5]%%LONGCHAR[BUG]%%WAIT[5]%%LONGCHAR[BUG]%%WAIT[5]%%LONGCHAR[BUG]%%WAIT[5]%%LONGCHAR[BUG]%%WAIT[5]%%LONGCHAR[BUG]%%WAIT[5]%%LONGCHAR[BUG]%%WAIT[5]%%LONGCHAR[BUG]%%WAIT[5]%%LONGCHAR[BUG]%%WAIT[5]%%LONGCHAR[BUG]%%WAIT[5]%%LONGCHAR[BUG]%%WAIT[5]%%PAUSE%%GOTO[INPUTNUM_END]%");
+TE_add_line(txtid, "%IF[VAR.TE_ASKREAL,==,9999]%Yep, %WAIT[10]%we're so far away!%PAUSE%%GOTO[INPUTNUM_END]%");
+TE_add_line(txtid, "%IF[VAR.TE_ASKREAL,==,0]%ALL HAIL OUR LORD CHRIST!!!!%PAUSE%%GOTO[INPUTNUM_END]%");
+TE_add_line(txtid, "%IF[VAR.TE_ASKREAL,>,2018]%Uh, %WAIT[10]%we're in the future now?%PAUSE%%GOTO[INPUTNUM_END]%");
+TE_add_line(txtid, "%IF[VAR.TE_ASKREAL,<,2018]%Don't get stuck in the past.%PAUSE%%GOTO[INPUTNUM_END]%");
+TE_add_line(txtid, "%TAG[INPUTNUM_END]%");
+TE_add_line(txtid, "Dare to tell me again?%CHOICE[Suck a cock you wanker,I'm an indecisive boi]%");
+TE_add_line(txtid, "%IF[TE_CHOICE,==,1]%%GOTO[INPUTNUM]%");
 TE_add_line(txtid, "%FACE[sTE_Facetest,2]%k bye");
 TE_add_line(txtid, "%END%");

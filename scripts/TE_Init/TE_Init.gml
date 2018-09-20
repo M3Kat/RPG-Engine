@@ -25,6 +25,7 @@ enum _teBoxType
 {
 	Message,																						// Normal message box
 	Choice,																							// Choice between numbers of values
+	AskReal,																						// Value to input
 	enum_end
 }
 

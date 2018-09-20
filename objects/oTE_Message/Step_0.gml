@@ -37,16 +37,62 @@ switch (box_type)
 			global.nspDsMap[? "TE_CHOICE"] = cursor_pos;													// Set cursor position to val
 			with (parent) TE_script_newline();
 			instance_destroy();
+			audio_play_sound(sfxTE_GUI_Confirm, 50, false);													// Cursor sound
 		}
 		if (keyboard_check_pressed(vk_up))
 		{
 			cursor_pos--;
 			if (cursor_pos < 0) cursor_pos = cursor_options - 1;
+			audio_play_sound(sfxTE_GUI_Cursor, 50, false);													// Cursor sound
 		}
 		if (keyboard_check_pressed(vk_down))
 		{
 			cursor_pos++;
 			if (cursor_pos >= cursor_options) cursor_pos = 0;
+			audio_play_sound(sfxTE_GUI_Cursor, 50, false);													// Cursor sound
+		}
+		break;
+	case _teBoxType.AskReal	:
+		if (keyboard_check_pressed(vk_space))
+		{
+			// Convert individual characters into a string
+			var fullstring = "";
+			for (var i = 0; i < array_length_1d(ask_char_array); i++)
+			{
+				fullstring = string_insert(ask_char_array[i], fullstring, i+1);								// Insert character one by one
+			}
+			global.nspDsMap[? "TE_ASKREAL"] = real(fullstring);												// Convert string into real and insert it inside TE_ASKREAL
+			with (parent) TE_script_newline();																// Insert new line
+			instance_destroy();
+			audio_play_sound(sfxTE_GUI_Confirm, 50, false);													// Cursor sound
+		}
+		if (keyboard_check_pressed(vk_left))
+		{
+			cursor_pos--;
+			if (cursor_pos < 0) cursor_pos = cursor_options - 1;
+			audio_play_sound(sfxTE_GUI_Cursor, 50, false);													// Cursor sound
+		}
+		if (keyboard_check_pressed(vk_right))
+		{
+			cursor_pos++;
+			if (cursor_pos >= cursor_options) cursor_pos = 0;
+			audio_play_sound(sfxTE_GUI_Cursor, 50, false);													// Cursor sound
+		}
+		if (keyboard_check_pressed(vk_up))
+		{
+			var numconvert = real(ask_char_array[cursor_pos]);												// Get digit
+			numconvert++;																						// Increment value
+			if (numconvert > 9) numconvert = 0;															// If over 9, loop back to 0
+			ask_char_array[cursor_pos] = string(numconvert);												// Reinsert digit into array
+			audio_play_sound(sfxTE_GUI_Cursor, 50, false);													// Cursor sound
+		}
+		if (keyboard_check_pressed(vk_down))
+		{
+			var numconvert = real(ask_char_array[cursor_pos]);												// Get digit
+			numconvert--;																					// Decrement value
+			if (numconvert < 0) numconvert = 9;																// If under 0, loop back to 9
+			ask_char_array[cursor_pos] = string(numconvert);												// Reinsert digit into array
+			audio_play_sound(sfxTE_GUI_Cursor, 50, false);													// Cursor sound
 		}
 		break;
 }	
@@ -62,7 +108,7 @@ if (!wait)
 if (line_copy == undefined && ds_list_size(line) != 0) line_copy = line[| 0];
 
 // New code because I'm such a cuck
-if (!pause && !wait && !finished)
+if (!pause && !wait && !finished && instance_exists(id))
 {
 	// Destroy textbox if on last line
 	if (index_line >= ds_list_size(line))
@@ -126,70 +172,7 @@ if (!pause && !wait && !finished)
 		}
 	}
 }
-/*if (abs(index_speed_dif) >= 1)
-{
-	speed_buffer	+= floor(abs(index_speed_dif));																// Increment speed buffer
-	index_speed_dif -= floor(abs(index_speed_dif)) * sign(index_speed_dif);										// Reset index speed dif
-}
-// If textbox is not paused or waiting, continue to draw lines
-if (!pause && !wait && !finished)
-{
-	// If line index is trespassing the maximum lin}e limit, destroy instance
-	if (index_line >= ds_list_size(line))
-	{
-		instance_destroy();	
-	}
-	else
-	{
-		// Increment number of characters
-		while (floor(abs(speed_buffer)) > 0)
-		{
-			arrayreturn = 0;
-			// Execute script if current character is a "%"
-			if (string_char_at(line[| index_line], index_char) == "%")
-			{
-				arrayreturn = TE_execute_script(line[| index_line], index_char);
-		
-				if (arrayreturn[_teCmdArray.charDelete] >= 0)
-				{
-					//line[| index_line] = string_delete(line[| index_line], index_char, cmdarray[_teCmdArray.charDelete]);	// Delete characters
-					index_char += arrayreturn[_teCmdArray.charDelete];												// Move the character index
-				}
-				string_display = string_insert(arrayreturn[_teCmdArray.charReplace], line[| index_line], index_char);	// Insert new string
-			}
-			
-			// Stop loop if waiting
-			if (pause || wait)
-			{
-				speed_buffer = 0;
-				break;
-			}
-	
-			// Copy string
-			string_display = string_insert(string_char_at(line[| index_line], index_char), string_display, string_length(string_display)+1);
-			
-			// Stop incrementing the char index if at last line
-			if (index_char < string_length(line[| index_line]))
-			{
-				index_char++;
-				speed_buffer--;
-			}
-			else
-			{
-				pause = true;
-				speed_buffer = 0;
-				break;
-			}
-			
-			//Decrement speed buffer
-			speed_buffer--;
-		}
-		// Add speed_buffer decimal to index_speed_dif
-		index_speed_dif	+= speed_buffer;
-		speed_buffer	= 0;
-	}
-}
-*/
+
 // Decrement wait timer
 if (wait > 0) wait--;
 

@@ -52,14 +52,14 @@ if (string_copy(varname, 1, 3) == "NPC")
 
 #endregion
 
-#region VAR TAG
+#region VAR TAG (Default)
 
-if (string_copy(varname, 1, 4) == "VAR." || string_count("VAR.", varname) == 0)
-{
+//if (string_copy(varname, 1, 4) == "VAR." || string_count("VAR.", varname) == 0)
+//{
 	var varstring	= "";																				// Name of variable
-	var varlength	= string_length(varname) - 4;														// Length of variable name (quick method, MAGIC NUMBER owo)
+	if (string_count("VAR.", varname) > 0) varname = string_delete(varname, 1, 4);						// Delete VAR tag if found
 	var varval		= 0;
-	varstring = string_copy(varname, 5, varlength);
+	varstring = varname;
 	// Does variable exists?
 	if (!ds_map_exists(global.nspDsMap, varstring))
 	{
@@ -67,6 +67,6 @@ if (string_copy(varname, 1, 4) == "VAR." || string_count("VAR.", varname) == 0)
 	}
 	varval = global.nspDsMap[? varstring];
 	return varval;
-}
+//}
 
 #endregion

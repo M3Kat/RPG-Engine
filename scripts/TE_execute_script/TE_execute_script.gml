@@ -158,6 +158,10 @@ switch (cmdarglist[| 0])
 		}
 		TE_script_choice(choicearray);
 		break;
+	case "ASKREAL"		:
+		var cmdarray	= TE_get_script_arguments(cmdarglist);
+		TE_script_askreal(cmdarray);
+		break;
 	case "MACRO"		:
 		var argarray	= TE_get_script_arguments(cmdarglist);
 		TE_script_macro(argarray);
@@ -169,6 +173,10 @@ switch (cmdarglist[| 0])
 		break;
 	case "END"			:
 		TE_script_end();
+		break;
+	case "ME_PLAYMUSIC"	:
+		var argarray	= TE_get_script_arguments(cmdarglist);
+		TE_script_ME_playmusic(argarray);
 		break;
 }
 
