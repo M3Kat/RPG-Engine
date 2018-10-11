@@ -7,6 +7,8 @@ surface_y			= 176;																											// Default y
 surface				= noone;																										// Create empty surface variable
 TE_create_surface();																												// Create New surface
 
+active				= false;																										// Is the window active?
+
 line				= ds_list_create();																								// Create ds list containing game lines
 line_copy			= undefined;																									// String containg copy of current line
 

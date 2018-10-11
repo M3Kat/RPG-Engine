@@ -10,7 +10,9 @@ var chararraycopy = arrayreturn[@_teCmdArray.charData];
 
 // Set character to string
 chararraycopy[@_teCharData.character]	= string(str);
-array_return[_teCmdArray.charReplace]	= " ";
+
+arrayreturn[_teCmdArray.skipNextCmd]	= true;
+//arrayreturn[_teCmdArray.charReplace]	= " ";
 //chararraycopy[@_teCharData.halign]		= fa_right;
 
 

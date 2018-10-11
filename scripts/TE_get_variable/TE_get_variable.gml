@@ -52,10 +52,10 @@ if (string_copy(varname, 1, 3) == "NPC")
 
 #endregion
 
-#region VAR TAG (Default)
+#region VAR TAG
 
-//if (string_copy(varname, 1, 4) == "VAR." || string_count("VAR.", varname) == 0)
-//{
+if (string_copy(varname, 1, 4) == "VAR.")
+{
 	var varstring	= "";																				// Name of variable
 	if (string_count("VAR.", varname) > 0) varname = string_delete(varname, 1, 4);						// Delete VAR tag if found
 	var varval		= 0;
@@ -67,6 +67,21 @@ if (string_copy(varname, 1, 3) == "NPC")
 	}
 	varval = global.nspDsMap[? varstring];
 	return varval;
-//}
+}
+
+#endregion
+
+#region REAL or STRING (no prefix)
+
+// Is the string only a number?
+var varreal = varname
+if (string_letters(varreal) == "")
+{
+	return real(varname);																				// Return real
+}
+else
+{
+	return string(varname);																				// Return string
+}
 
 #endregion

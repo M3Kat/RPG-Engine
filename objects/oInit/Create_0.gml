@@ -3,6 +3,8 @@
 
 NSP_initialize();
 
+INV_init();
+
 TE_Init();
 
 NPC_init();

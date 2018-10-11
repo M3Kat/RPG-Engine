@@ -178,6 +178,87 @@ switch (cmdarglist[| 0])
 		var argarray	= TE_get_script_arguments(cmdarglist);
 		TE_script_ME_playmusic(argarray);
 		break;
+		
+	#region INV COMMANDS
+	
+	case "INV_ADD_ITEM"	:
+		var argarray	= TE_get_script_arguments(cmdarglist);
+		TE_script_INV_add_item(argarray);
+		break;
+	case "INV_REMOVE_ITEM"	:
+		var argarray	= TE_get_script_arguments(cmdarglist);
+		TE_script_INV_remove_item(argarray);
+		break;
+	case "INV_FIND_ITEM"	:
+		var argarray	= TE_get_script_arguments(cmdarglist);
+		TE_script_INV_find_item(argarray);
+		break;
+	
+	#endregion
+	
+	#region DS COMMANDS (MAYBE NOT USE)
+	
+		#region DS LIST
+		
+		case "DSL_CREATE"	:
+			var arg1	= cmdarglist[|1];
+			TE_script_DS_List_create(arg1);
+			break;
+		case "DSL_GET"		:
+			var arg1	= cmdarglist[|1];
+			var arg2	= cmdarglist[|2];
+			TE_script_DS_List_get(arg1, arg2);
+			break;
+		case "DSL_SET"		:
+			var arg1	= cmdarglist[|1];
+			var arg2	= cmdarglist[|2];
+			var arg3	= cmdarglist[|3];
+			TE_script_DS_List_set(arg1, arg2, arg3);
+			break;
+		case "DSL_INSERT"	:
+			var arg1	= cmdarglist[|1];
+			var arg2	= cmdarglist[|2];
+			var arg3	= cmdarglist[|3];
+			TE_script_DS_List_insert(arg1, arg2, arg3);
+			break;
+		case "DSL_ADD"		:
+			var arg1	= cmdarglist[|1];
+			var arg2	= cmdarglist[|2];
+			TE_script_DS_List_add(arg1, arg2);
+			break;
+		case "DSL_CLEAR"	:
+			var arg1	= cmdarglist[|1];
+			TE_script_DS_List_clear(arg1);
+			break;
+		case "DSL_DESTROY"	:
+			var arg1	= cmdarglist[|1];
+			TE_script_DS_List_destroy(arg1);
+			break;
+			
+		#endregion
+		
+		#region DO NOT USE DO NOT USE DO NOT USE DO NOT USE --- DS Arrays
+		
+		case "DSA_CREATE"	:
+			var arg1	= cmdarglist[|1];
+			var arg2	= cmdarglist[|2];
+			TE_script_DS_Array_create(arg1, arg2);
+			break;
+		case "DSA_GET"		:
+			var arg1	= cmdarglist[|1];
+			var arg2	= cmdarglist[|2];
+			TE_script_DS_Array_get(arg1, arg2);
+			break;
+		case "DSA_SET"		:
+			var arg1	= cmdarglist[|1];
+			var arg2	= cmdarglist[|2];
+			var arg3	= cmdarglist[|3];
+			TE_script_DS_Array_set(arg1, arg2, arg3);
+			break;
+			
+		#endregion
+		
+	#endregion
 }
 
 #endregion

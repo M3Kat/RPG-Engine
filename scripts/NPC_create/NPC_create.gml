@@ -2,6 +2,8 @@
 
 sprite_grid			= ds_grid_create(_npcAnimState.enum_end, _npcOrientation.enum_end);
 
+script_map			= ds_map_create();
+
 // TEMP SPRITES (SET ALL TO ALEX)
 var i,j;
 var arraycopy;
@@ -60,4 +62,10 @@ while (tagdiff)
 	}
 }
 */
+
+// Setup scripts
+script_map[? NPC_SCRIPT_ONTALK]			= ds_list_create();
+script_map[? NPC_SCRIPT_ONTOUCH]		= ds_list_create();
+script_map[? NPC_SCRIPT_ONSTART]		= ds_list_create();
+script_map[? NPC_SCRIPT_ONEACHFRAME]	= ds_list_create();
 #endregion

@@ -7,6 +7,8 @@ var cmdarray;																								// Gets value from TE_execute_script and is
 
 #endregion
 
+// Break if instance doesn't exists
+if (!instance_exists(id)) return undefined;
 
 // Set speed buffer mode when pressing a button
 
@@ -105,7 +107,10 @@ if (!wait)
 }
 
 // Set line_copy to first line if it's undefined
-if (line_copy == undefined && ds_list_size(line) != 0) line_copy = line[| 0];
+if (ds_exists(line, ds_type_list))
+{
+	if (line_copy == undefined && ds_list_size(line) != 0) line_copy = line[| 0];
+}
 
 // New code because I'm such a cuck
 if (!pause && !wait && !finished && instance_exists(id))
@@ -124,7 +129,7 @@ if (!pause && !wait && !finished && instance_exists(id))
 			arrayreturn = array_create(_teCmdArray.enum_end, undefined);
 			arrayreturn[_teCmdArray.charData] = array_create(_teCharData.enum_end, undefined);
 			// Execute script if current character in the index is "%"
-			while (string_char_at(line_copy, index_char) == "%" && !pause && !wait)
+			while (string_char_at(line_copy, index_char) == "%" && !pause && !wait && arrayreturn[_teCmdArray.skipNextCmd] != true)
 			{
 				// Get command
 				arrayreturn = TE_execute_script(line_copy, index_char);
@@ -154,11 +159,15 @@ if (!pause && !wait && !finished && instance_exists(id))
 			// Increment char count if not at the end of line. Or ekse pause the textbox
 			if (index_char < string_length(line_copy))
 			{
-				index_char++;
-				
-				// Play SFX
-				audio_stop_sound(text_sound);
-				audio_play_sound(text_sound, 25, false);
+				// Do we skip next cmd
+				if (arrayreturn[_teCmdArray.skipNextCmd] != true)
+				{
+					index_char++;
+					
+					// Play SFX
+					audio_stop_sound(text_sound);
+					audio_play_sound(text_sound, 25, false);
+				}
 			}
 			else
 			{

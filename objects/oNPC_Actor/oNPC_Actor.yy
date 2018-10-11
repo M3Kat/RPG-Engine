@@ -5,16 +5,6 @@
     "name": "oNPC_Actor",
     "eventList": [
         {
-            "id": "5bb06aab-01bf-40f0-af42-7b308ac7a37a",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 3,
-            "m_owner": "c5f8d062-ead2-48a8-8c2f-6fec3852411d"
-        },
-        {
             "id": "35f687e1-db6f-44e9-b0cd-6122f6d6bdac",
             "modelName": "GMEvent",
             "mvc": "1.0",

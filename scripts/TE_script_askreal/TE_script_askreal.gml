@@ -25,8 +25,9 @@ var i,j,k;
 #region Setup textbox
 
 // If there is 2 arguments, set default value of choice
-if (array_length_1d(argument0) >= 2) realdefault = argument0[@ 1];
+if (array_length_1d(argument0) >= 2) realdefault = real(TE_get_variable(argument0[@ 1]));
 realstring = string_format(realdefault, reallength, 0);
+realstring = string_replace_all(realstring, " ", "0");
 
 
 // Set full width of box

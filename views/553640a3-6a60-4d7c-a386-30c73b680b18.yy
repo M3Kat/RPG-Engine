@@ -11,7 +11,8 @@
         "f4d4f47d-ad53-4410-b386-bfb00d5d72cc",
         "6c2bcaf6-ca93-45e9-b873-7cf48f6a8442",
         "28b35b38-9852-4173-8f0c-1b4ce3736555",
-        "a5abd98b-8d95-4d48-aecf-5a9be0929d6d"
+        "a5abd98b-8d95-4d48-aecf-5a9be0929d6d",
+        "f1b2736d-39fa-43e1-89e1-96ca23efb26c"
     ],
     "filterType": "GMIncludedFile",
     "folderName": "macro",
