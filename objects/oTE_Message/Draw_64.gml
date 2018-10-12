@@ -187,5 +187,9 @@ if (box_type == _teBoxType.AskReal)
 	draw_set_color($ffffff);
 	draw_rectangle(TE_CHAR_HEIGHT*cursor_pos+TE_BORDER_SIZE-4,TE_BORDER_SIZE-4,TE_CHAR_HEIGHT*(cursor_pos+1)-1+TE_BORDER_SIZE-4,TE_CHAR_HEIGHT+TE_BORDER_SIZE, true);
 }
-surface_reset_target();																							// Return to application surface
-draw_surface(surface, surface_x, surface_y);																	// Draw surface
+surface_reset_target();																												// Return to application surface
+
+var ssw = surface_width * surface_stretch_w;																						// Stretch w
+var ssh = surface_height * surface_stretch_h;																						// Stretch h
+
+draw_surface_stretched(surface, surface_x, surface_y, ssw, ssh);																	// Draw surface

@@ -5,10 +5,12 @@ room_set_height(room, 320);
 
 var txtid = TE_create();
 
-
+txtid.active = true;
+TE_add_line(txtid, "Welcome to RPG-ENGINE!%PAUSE%\nHope you have fun here!%CHOICE[:D,:(]%");
+/*
 TE_add_line(txtid, "%NEWLINE%");
 TE_add_line(txtid, "%MACRO[_InventoryTest]%");
-/*TE_add_line(txtid, "%LOOP%");
+TE_add_line(txtid, "%LOOP%");
 TE_add_line(txtid, "%INSTANT%105=%VARIABLE[VAR.NPC105.test]%, 1010=%VARIABLE[VAR.NPC1010.test]%, 248=%VARIABLE[VAR.NPC248.test]%%WAIT[2]%%NEWLINE%");
 TE_add_line(txtid, "%MATH[NPC105.test,+=,3]%%NEWLINE%");
 TE_add_line(txtid, "%MATH[NPC1010.test,+=,2]%%NEWLINE%");
@@ -29,7 +31,7 @@ TE_add_line(txtid, "%MACRO[_MacroTestC]%");
 TE_add_line(txtid, "%MACRO[_MacroTestB]%");
 TE_add_line(txtid, "%MACRO[_MacroTestA]%");
 TE_add_line(txtid, "%MATH[MACROCOUNT,+=,1]%%NEWLINE%");
-TE_add_line(txtid, "%LOOPEND%");*/
+TE_add_line(txtid, "%LOOPEND%");
 //TE_add_line(txtid, "%GOTO[MACRO]%");
 //TE_add_line(txtid, "%MACRO[_TestCondition]%");
 //TE_add_line(txtid, "ye%CHOICE[&CHOICE[nyet,nyet]&ye,ye]%");
@@ -123,4 +125,4 @@ TE_add_line(txtid, "%TAG[INPUTNUM_END]%");
 TE_add_line(txtid, "Dare to tell me again?%CHOICE[Suck a cock you wanker,I'm an indecisive boi]%");
 TE_add_line(txtid, "%IF[VAR.TE_CHOICE,==,1]%%GOTO[INPUTNUM]%");
 TE_add_line(txtid, "%FACE[sTE_Facetest,2]%k bye");
-TE_add_line(txtid, "%END%");
+TE_add_line(txtid, "%END%");*/

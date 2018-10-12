@@ -9,6 +9,8 @@ enum _npcAnimState
 {
 	idle,
 	walk,
+	run,
+	jump,
 	enum_end
 }
 

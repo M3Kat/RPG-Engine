@@ -7,6 +7,9 @@ surface_y			= 176;																											// Default y
 surface				= noone;																										// Create empty surface variable
 TE_create_surface();																												// Create New surface
 
+surface_stretch_w	= 1;																											// Surface strecth 
+surface_stretch_h	= 0;																											// Surface stretch
+
 active				= false;																										// Is the window active?
 
 line				= ds_list_create();																								// Create ds list containing game lines
@@ -56,4 +59,5 @@ condition[0]		= false;																										// Set result of condition on ea
 
 arrayreturn			= undefined;
 
-finished			= false;																										// Destroy instance if true
+initiated			= false;																										// Do open animation if false
+finished			= false;																										// Do closure animation if true

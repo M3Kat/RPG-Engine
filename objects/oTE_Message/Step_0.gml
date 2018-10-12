@@ -38,7 +38,8 @@ switch (box_type)
 		{
 			global.nspDsMap[? "TE_CHOICE"] = cursor_pos;													// Set cursor position to val
 			with (parent) TE_script_newline();
-			instance_destroy();
+			//instance_destroy();
+			finished = true;
 			audio_play_sound(sfxTE_GUI_Confirm, 50, false);													// Cursor sound
 		}
 		if (keyboard_check_pressed(vk_up))
@@ -65,7 +66,8 @@ switch (box_type)
 			}
 			global.nspDsMap[? "TE_ASKREAL"] = real(fullstring);												// Convert string into real and insert it inside TE_ASKREAL
 			with (parent) TE_script_newline();																// Insert new line
-			instance_destroy();
+			//instance_destroy();
+			finished = true;
 			audio_play_sound(sfxTE_GUI_Confirm, 50, false);													// Cursor sound
 		}
 		if (keyboard_check_pressed(vk_left))
@@ -118,7 +120,8 @@ if (!pause && !wait && !finished && instance_exists(id))
 	// Destroy textbox if on last line
 	if (index_line >= ds_list_size(line))
 	{
-		instance_destroy();
+		//instance_destroy();
+		finished = true;
 	}
 	else
 	{
@@ -185,5 +188,8 @@ if (!pause && !wait && !finished && instance_exists(id))
 // Decrement wait timer
 if (wait > 0) wait--;
 
-// Destroy textbox if finished
-if (finished) instance_destroy();
+
+// Do open animation when textbox is not initiated
+if (!initiated) event_user(1);
+// Do closure animation when textbox is finished
+if (finished) event_user(2);

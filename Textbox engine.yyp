@@ -647,6 +647,14 @@
             }
         },
         {
+            "Key": "5991477f-c8b5-4751-9ad3-913e47806d4f",
+            "Value": {
+                "id": "2d21243a-dff7-4ff3-8108-c3446f02b217",
+                "resourcePath": "scripts\\NPC_load_json_sprites\\NPC_load_json_sprites.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "5bc31e2e-d0ff-4517-8d7a-53eeaf5b53ea",
             "Value": {
                 "id": "4cbbdcd4-cabb-4de6-9ef4-2620476c5631",
@@ -807,6 +815,14 @@
             }
         },
         {
+            "Key": "72da597d-43f1-413e-b79c-68b8739f85e0",
+            "Value": {
+                "id": "5d928c24-aaae-4790-851e-3abcc56a3c2d",
+                "resourcePath": "views\\72da597d-43f1-413e-b79c-68b8739f85e0.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "761fcfba-b60a-4a48-a85b-246498b6783b",
             "Value": {
                 "id": "0935eb1e-76fb-4272-8d6f-d4113e85f8c8",
@@ -900,6 +916,14 @@
                 "id": "4ea87573-0765-4bd4-939f-a8df45528ac5",
                 "resourcePath": "scripts\\nsp_variable_set\\nsp_variable_set.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "806f0c60-cae5-4d52-8322-38f8d081ee75",
+            "Value": {
+                "id": "039151db-5f6a-4783-85c3-46db1203875f",
+                "resourcePath": "views\\806f0c60-cae5-4d52-8322-38f8d081ee75.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -1791,6 +1815,7 @@
         "03a9b447-ac2f-4816-92b6-67762669d862",
         "3625ed56-a38b-48f6-8e8c-84da9c700f43",
         "6327a8fe-21c0-4ec3-81b8-0a01a4378792",
+        "5991477f-c8b5-4751-9ad3-913e47806d4f",
         "39f5f46c-e85e-4f7c-ae63-d63723137fd0",
         "92da67f6-f7ca-4372-9791-8b0d0be38db7",
         "ea06d46a-224c-4c5b-907e-7474bfeefc06",
