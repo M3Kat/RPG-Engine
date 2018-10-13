@@ -14,12 +14,34 @@ enum _npcAnimState
 	enum_end
 }
 
+global.tokenNPCAnimState = array_create(_npcAnimState.enum_end,"");
+global.tokenNPCAnimState[_npcAnimState.idle]	= "idle";
+global.tokenNPCAnimState[_npcAnimState.walk]	= "walk";
+global.tokenNPCAnimState[_npcAnimState.run]		= "run";
+global.tokenNPCAnimState[_npcAnimState.jump]	= "jump";
+
 enum _npcAnimData
 {
 	sprite,
+	originX,
+	originY,
+	animFrames,
 	animSpeed,
 	enum_end
 }
+
+global.tokenNPCAnimData = array_create(_npcAnimData.enum_end,"");
+global.tokenNPCAnimData[_npcAnimData.sprite]		= "sprites";
+global.tokenNPCAnimData[_npcAnimData.originX]		= "originX";
+global.tokenNPCAnimData[_npcAnimData.originY]		= "originY";
+global.tokenNPCAnimData[_npcAnimData.animFrames]	= "animFrames";
+global.tokenNPCAnimData[_npcAnimData.animSpeed]		= "animSpeed";
+
+global.defaultNPCAnimData = array_create(_npcAnimData.enum_end,	undefined);
+global.defaultNPCAnimData[_npcAnimData.originX]		= 0;
+global.defaultNPCAnimData[_npcAnimData.originY]		= 0;
+global.defaultNPCAnimData[_npcAnimData.animFrames]	= 1;
+global.defaultNPCAnimData[_npcAnimData.animSpeed]	= 1;
 
 enum _npcOrientation
 {

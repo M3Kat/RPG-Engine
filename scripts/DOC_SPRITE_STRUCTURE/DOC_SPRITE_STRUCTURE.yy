@@ -1,8 +1,8 @@
 {
-    "id": "5991477f-c8b5-4751-9ad3-913e47806d4f",
+    "id": "64f21ea0-fb7e-49d1-8d39-52da341d0436",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "NPC_load_json_sprites",
+    "name": "DOC_SPRITE_STRUCTURE",
     "IsCompatibility": false,
     "IsDnD": false
 }

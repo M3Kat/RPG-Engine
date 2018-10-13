@@ -4,7 +4,7 @@
     "mvc": "1.1",
     "name": "806f0c60-cae5-4d52-8322-38f8d081ee75",
     "children": [
-        "72da597d-43f1-413e-b79c-68b8739f85e0"
+        "de05f58b-468e-4009-b575-8d8c2b42fc04"
     ],
     "filterType": "GMIncludedFile",
     "folderName": "actors",
