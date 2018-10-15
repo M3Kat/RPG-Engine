@@ -1,46 +1,46 @@
 {
 	"global": {
 		"originX": 12,
-		"originY": 32,
+		"originY": 32
 	},
 	"idle": {
 		"sprites": [
-			0 : "idleUp.png",
-			1 : "idleRight.png",
-			2 : "idleDown.png",
-			3 : "idleLeft.png"
+			"idleUp.png",
+			"idleRight.png",
+			"idleDown.png",
+			"idleLeft.png"
 			],
 		"animFrames": 1,
 		"animSpeed": 0
 	},
 	"walk": {
 		"sprites": [
-			0 : "walkUp.png",
-			1 : "walkRight.png",
-			2 : "walkDown.png",
-			3 : "walkLeft.png"
+			"walkUp.png",
+			"walkRight.png",
+			"walkDown.png",
+			"walkLeft.png"
 			],
 		"animFrames": 4,
-		"animSpeed": 1
+		"animSpeed": 6
 	},
 	"run": {
 		"sprites": [
-			0 : "runUp.png",
-			1 : "runRight.png",
-			2 : "runDown.png",
-			3 : "runLeft.png"
+			"runUp.png",
+			"runRight.png",
+			"runDown.png",
+			"runLeft.png"
 			],
 		"animFrames": 4,
-		"animSpeed": 1.5
+		"animSpeed": 12
 	},
 	"jump": {
 		"sprites": [
-			0 : "jumpUp.png",
-			1 : "jumpRight.png",
-			2 : "jumpDown.png",
-			3 : "jumpLeft.png"
+			"jumpUp.png",
+			"jumpRight.png",
+			"jumpDown.png",
+			"jumpLeft.png"
 			],
 		"animFrames": 4,
-		"animSpeed": 0.75
+		"animSpeed": 16
 	}
 }

@@ -1,11 +1,11 @@
 /// @description Create a new NPC
 
-sprite_grid			= ds_grid_create(_npcAnimState.enum_end, _npcOrientation.enum_end); // CHANGE THIS :<
+sprite_grid			= NPC_load_sprite("_default");
 
 script_map			= ds_map_create();
 
 #region SPRITE_GRID REMOVE THIS
-// TEMP SPRITES (SET ALL TO ALEX)
+/*// TEMP SPRITES (SET ALL TO ALEX)
 var i,j;
 var arraycopy;
 for (i = 0; i < _npcAnimState.enum_end; i++)
@@ -41,9 +41,6 @@ for (i = 0; i < _npcAnimState.enum_end; i++)
 	}
 }
 
-npc_state			= _npcAnimState.idle;
-npc_face_direction	= _npcOrientation.down;
-
 #endregion
 
 #region Prevent NPC having same tag
@@ -66,6 +63,10 @@ while (tagdiff)
 }
 */
 #endregion
+
+npc_state			= _npcAnimState.idle;
+npc_face_direction	= _npcOrientation.down;
+
 
 // Setup scripts
 script_map[? NPC_SCRIPT_ONTALK]			= ds_list_create();

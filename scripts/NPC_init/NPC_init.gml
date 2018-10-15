@@ -38,8 +38,9 @@ global.tokenNPCAnimData[_npcAnimData.animFrames]	= "animFrames";
 global.tokenNPCAnimData[_npcAnimData.animSpeed]		= "animSpeed";
 
 global.defaultNPCAnimData = array_create(_npcAnimData.enum_end,	undefined);
-global.defaultNPCAnimData[_npcAnimData.originX]		= 0;
-global.defaultNPCAnimData[_npcAnimData.originY]		= 0;
+global.defaultNPCAnimData[_npcAnimData.sprite]		= sNPC_Failsafe;
+global.defaultNPCAnimData[_npcAnimData.originX]		= 12;
+global.defaultNPCAnimData[_npcAnimData.originY]		= 32;
 global.defaultNPCAnimData[_npcAnimData.animFrames]	= 1;
 global.defaultNPCAnimData[_npcAnimData.animSpeed]	= 1;
 
