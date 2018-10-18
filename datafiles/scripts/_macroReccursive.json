@@ -1,0 +1,4 @@
+[
+	"Load another macro?%CHOICE[Yes,No]%",
+	"%IF[VAR.TE_CHOICE,==,0]%%MACRO[_macroReccursive]%"
+]

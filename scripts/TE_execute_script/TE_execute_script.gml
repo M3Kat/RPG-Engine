@@ -108,6 +108,7 @@ switch (cmdarglist[| 0])
 		TE_arrayreturn_nodeletion();
 		break;
 	case "TAG"			:
+	case "MACROBEGIN"	:
 	case "NEWLINE"		:
 		TE_script_newline();
 		TE_arrayreturn_nodeletion();
@@ -174,11 +175,24 @@ switch (cmdarglist[| 0])
 	case "END"			:
 		TE_script_end();
 		break;
+	case "TE_CREATE"	:
+		break;
+	case "TE_MOVE"		:
+		break;
 	case "ME_PLAYMUSIC"	:
 		var argarray	= TE_get_script_arguments(cmdarglist);
 		TE_script_ME_playmusic(argarray);
 		break;
 		
+	#region NPC COMMANDS
+	
+	case "NPC_LOAD_SPRITE"	:
+		var argarray	= TE_get_script_arguments(cmdarglist);
+		TE_script_NPC_load_sprite(argarray);
+		break;
+	
+	#endregion
+	
 	#region INV COMMANDS
 	
 	case "INV_ADD_ITEM"	:

@@ -105,7 +105,7 @@ if (!TE_activeWindows)
 		}
 	}
 	sprite_index	= spritearray[_npcAnimData.sprite];
-	image_speed		= spritearray[_npcAnimData.animSpeed];
+	//image_speed		= spritearray[_npcAnimData.animSpeed];
 	// Talk to NPC
 	if (keyboard_check_pressed(vk_space))
 	{
@@ -131,6 +131,7 @@ if (!TE_activeWindows)
 			{
 				var _txtbox = TE_create();
 				TE_add_batch(_txtbox, NPC_SCRIPT_ONTALK);
+				_txtbox.parent_caller = id;
 				_txtbox.active = true;
 			}
 		}

@@ -17,92 +17,96 @@ if (!keyboard_check(vk_space))					speed_buffer_mode = _teSpdBufferMode.normal;
 
 // New line
 
-switch (box_type)
+if (initiated && !finished)
 {
-	case _teBoxType.Message	:																				// Textbox is a message
-		if (keyboard_check_pressed(vk_space))
-		{
-			if (pause)
+
+	switch (box_type)
+	{
+		case _teBoxType.Message	:																				// Textbox is a message
+			if (keyboard_check_pressed(vk_space))
 			{
-				pause = false;																				// Continue text scroll
+				if (pause)
+				{
+					pause = false;																				// Continue text scroll
+				}
+				// Is on last char or is child textbox exists?
+				if (index_char >= string_length(line[| index_line]) - 1 && !instance_exists(child))
+				{
+					TE_script_newline();
+				}
 			}
-			// Is on last char or is child textbox exists?
-			if (index_char >= string_length(line[| index_line]) - 1 && !instance_exists(child))
+			break;
+		case _teBoxType.Choice	:																				// Textbox is a choice
+			if (keyboard_check_pressed(vk_space))
 			{
-				TE_script_newline();
+				global.nspDsMap[? "TE_CHOICE"] = cursor_pos;													// Set cursor position to val
+				with (parent) TE_script_newline();
+				//instance_destroy();
+				finished = true;
+				audio_play_sound(sfxTE_GUI_Confirm, 50, false);													// Cursor sound
 			}
-		}
-		break;
-	case _teBoxType.Choice	:																				// Textbox is a choice
-		if (keyboard_check_pressed(vk_space))
-		{
-			global.nspDsMap[? "TE_CHOICE"] = cursor_pos;													// Set cursor position to val
-			with (parent) TE_script_newline();
-			//instance_destroy();
-			finished = true;
-			audio_play_sound(sfxTE_GUI_Confirm, 50, false);													// Cursor sound
-		}
-		if (keyboard_check_pressed(vk_up))
-		{
-			cursor_pos--;
-			if (cursor_pos < 0) cursor_pos = cursor_options - 1;
-			audio_play_sound(sfxTE_GUI_Cursor, 50, false);													// Cursor sound
-		}
-		if (keyboard_check_pressed(vk_down))
-		{
-			cursor_pos++;
-			if (cursor_pos >= cursor_options) cursor_pos = 0;
-			audio_play_sound(sfxTE_GUI_Cursor, 50, false);													// Cursor sound
-		}
-		break;
-	case _teBoxType.AskReal	:
-		if (keyboard_check_pressed(vk_space))
-		{
-			// Convert individual characters into a string
-			var fullstring = "";
-			for (var i = 0; i < array_length_1d(ask_char_array); i++)
+			if (keyboard_check_pressed(vk_up))
 			{
-				fullstring = string_insert(ask_char_array[i], fullstring, i+1);								// Insert character one by one
+				cursor_pos--;
+				if (cursor_pos < 0) cursor_pos = cursor_options - 1;
+				audio_play_sound(sfxTE_GUI_Cursor, 50, false);													// Cursor sound
 			}
-			global.nspDsMap[? "TE_ASKREAL"] = real(fullstring);												// Convert string into real and insert it inside TE_ASKREAL
-			with (parent) TE_script_newline();																// Insert new line
-			//instance_destroy();
-			finished = true;
-			audio_play_sound(sfxTE_GUI_Confirm, 50, false);													// Cursor sound
-		}
-		if (keyboard_check_pressed(vk_left))
-		{
-			cursor_pos--;
-			if (cursor_pos < 0) cursor_pos = cursor_options - 1;
-			audio_play_sound(sfxTE_GUI_Cursor, 50, false);													// Cursor sound
-		}
-		if (keyboard_check_pressed(vk_right))
-		{
-			cursor_pos++;
-			if (cursor_pos >= cursor_options) cursor_pos = 0;
-			audio_play_sound(sfxTE_GUI_Cursor, 50, false);													// Cursor sound
-		}
-		if (keyboard_check_pressed(vk_up))
-		{
-			var numconvert = real(ask_char_array[cursor_pos]);												// Get digit
-			numconvert++;																						// Increment value
-			if (numconvert > 9) numconvert = 0;															// If over 9, loop back to 0
-			ask_char_array[cursor_pos] = string(numconvert);												// Reinsert digit into array
-			audio_play_sound(sfxTE_GUI_Cursor, 50, false);													// Cursor sound
-		}
-		if (keyboard_check_pressed(vk_down))
-		{
-			var numconvert = real(ask_char_array[cursor_pos]);												// Get digit
-			numconvert--;																					// Decrement value
-			if (numconvert < 0) numconvert = 9;																// If under 0, loop back to 9
-			ask_char_array[cursor_pos] = string(numconvert);												// Reinsert digit into array
-			audio_play_sound(sfxTE_GUI_Cursor, 50, false);													// Cursor sound
-		}
-		break;
-}	
+			if (keyboard_check_pressed(vk_down))
+			{
+				cursor_pos++;
+				if (cursor_pos >= cursor_options) cursor_pos = 0;
+				audio_play_sound(sfxTE_GUI_Cursor, 50, false);													// Cursor sound
+			}
+			break;
+		case _teBoxType.AskReal	:
+			if (keyboard_check_pressed(vk_space))
+			{
+				// Convert individual characters into a string
+				var fullstring = "";
+				for (var i = 0; i < array_length_1d(ask_char_array); i++)
+				{
+					fullstring = string_insert(ask_char_array[i], fullstring, i+1);								// Insert character one by one
+				}
+				global.nspDsMap[? "TE_ASKREAL"] = real(fullstring);												// Convert string into real and insert it inside TE_ASKREAL
+				with (parent) TE_script_newline();																// Insert new line
+				//instance_destroy();
+				finished = true;
+				audio_play_sound(sfxTE_GUI_Confirm, 50, false);													// Cursor sound
+			}
+			if (keyboard_check_pressed(vk_left))
+			{
+				cursor_pos--;
+				if (cursor_pos < 0) cursor_pos = cursor_options - 1;
+				audio_play_sound(sfxTE_GUI_Cursor, 50, false);													// Cursor sound
+			}
+			if (keyboard_check_pressed(vk_right))
+			{
+				cursor_pos++;
+				if (cursor_pos >= cursor_options) cursor_pos = 0;
+				audio_play_sound(sfxTE_GUI_Cursor, 50, false);													// Cursor sound
+			}
+			if (keyboard_check_pressed(vk_up))
+			{
+				var numconvert = real(ask_char_array[cursor_pos]);												// Get digit
+				numconvert++;																						// Increment value
+				if (numconvert > 9) numconvert = 0;															// If over 9, loop back to 0
+				ask_char_array[cursor_pos] = string(numconvert);												// Reinsert digit into array
+				audio_play_sound(sfxTE_GUI_Cursor, 50, false);													// Cursor sound
+			}
+			if (keyboard_check_pressed(vk_down))
+			{
+				var numconvert = real(ask_char_array[cursor_pos]);												// Get digit
+				numconvert--;																					// Decrement value
+				if (numconvert < 0) numconvert = 9;																// If under 0, loop back to 9
+				ask_char_array[cursor_pos] = string(numconvert);												// Reinsert digit into array
+				audio_play_sound(sfxTE_GUI_Cursor, 50, false);													// Cursor sound
+			}
+			break;
+	}	
+}
 
 // Set speed buffer
-if (!wait)
+if (!wait && !pause)
 {
 	if (speed_buffer_mode == _teSpdBufferMode.normal) speed_buffer += index_speed;
 	if (speed_buffer_mode == _teSpdBufferMode.fast) speed_buffer += index_speed_fast;
@@ -113,6 +117,13 @@ if (ds_exists(line, ds_type_list))
 {
 	if (line_copy == undefined && ds_list_size(line) != 0) line_copy = line[| 0];
 }
+
+// Set textbox to finished if past DS LIST limit
+if (index_line >= ds_list_size(line))
+{
+	finished = true;
+}
+
 
 // New code because I'm such a cuck
 if (!pause && !wait && !finished && instance_exists(id))
@@ -132,7 +143,7 @@ if (!pause && !wait && !finished && instance_exists(id))
 			arrayreturn = array_create(_teCmdArray.enum_end, undefined);
 			arrayreturn[_teCmdArray.charData] = array_create(_teCharData.enum_end, undefined);
 			// Execute script if current character in the index is "%"
-			while (string_char_at(line_copy, index_char) == "%" && !pause && !wait && arrayreturn[_teCmdArray.skipNextCmd] != true)
+			while (string_char_at(line_copy, index_char) == "%" && !pause && !wait && arrayreturn[_teCmdArray.skipNextCmd] != true && !finished)
 			{
 				// Get command
 				arrayreturn = TE_execute_script(line_copy, index_char);

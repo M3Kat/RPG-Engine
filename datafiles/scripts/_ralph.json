@@ -1,0 +1,7 @@
+[
+	"%LONGCHAR[Ralph :]%\nBlah blah blah blah blahblahblahblahblablalbalbablblblblbbbbbbbbbbbbbbbbbbb%NEWLINE%",
+	"%LONGCHAR[Ralph :]%\nAm I a good boy?%CHOICE[kys, no]%",
+	"%IF[VAR.TE_CHOICE,==,0]%%LONGCHAR[Ralph :]%\nYou cannot kill things that are dead inside!%WAIT[20]%\n
+		WOLOLOLOLOLOLOLOLOLO\nWOLOLOLOLOLOLOLOLOLO\nWOLOLOLOLOLOLOLOLOLO\nWOLOLOLOLOLOLOLOLOLO\nWOLOLOLOLOLOLOLOLOLO\nWOLOLOLOLOLOLOLOLOLO\n",
+	"%IF[VAR.TE_CHOICE,==,1]%%LONGCHAR[Ralph :]%\nWAHHHHHHHHHHHHHHH"
+]

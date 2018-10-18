@@ -30,7 +30,7 @@ if (file_exists(JSON_ACTORS_DIRECTORY+jsonname+"/data.json"))
 	// Has sprite already been loaded before?
 	if (!ds_map_exists(global.actorSpriteMap, jsonname))
 	{
-		#region Load JSON data parameters
+		/*#region Load JSON data parameters
 	
 		jsonfile = file_text_open_read(JSON_ACTORS_DIRECTORY+jsonname+"/data.json");		// Open json file
 		while (!file_text_eof(jsonfile))
@@ -51,7 +51,9 @@ if (file_exists(JSON_ACTORS_DIRECTORY+jsonname+"/data.json"))
 	
 		jsonmap = json_decode(jsonstring);
 	
-		#endregion
+		#endregion*/
+		
+		jsonmap = json_decode_file(JSON_ACTORS_DIRECTORY+jsonname+"/data.json");		// Open json file
 		
 		#region Setup global data for "Sprite_Grid"    //     "Sprite_Grid" && load sprites into game if new.
 		
@@ -124,7 +126,7 @@ if (file_exists(JSON_ACTORS_DIRECTORY+jsonname+"/data.json"))
 							
 							// File was never loaded before : Create new sprite
 							var tfimg	= spritearray[_npcAnimData.animFrames];										// Number of frames
-							var tfspd	= spritearray[_npcAnimData.animSpeed] / tfimg;								// Speed of animation
+							var tfspd	= spritearray[_npcAnimData.animSpeed];								// Speed of animation
 							var tfox	= spritearray[_npcAnimData.originX];										// X origin
 							var tfoy	= spritearray[_npcAnimData.originY];										// Y origin
 							
@@ -200,7 +202,7 @@ if (file_exists(JSON_ACTORS_DIRECTORY+jsonname+"/data.json"))
 	
 	// Load sprite on this NPC
 	sprite_grid = global.actorSpriteMap[?jsonname];						// Reference grid stored in global variable
-
+	//show_message(string(sprite_grid))
 }
 else
 {

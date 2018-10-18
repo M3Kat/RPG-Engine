@@ -39,6 +39,14 @@
             }
         },
         {
+            "Key": "01fbcb7b-d222-486b-9f14-3001f904b28f",
+            "Value": {
+                "id": "b6b252cd-cdc3-4258-9919-65440e6c0150",
+                "resourcePath": "datafiles_yy\\actors\\_woman\\data.json.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "02b49883-f00a-4476-b348-1bd9d498bce5",
             "Value": {
                 "id": "d6866bea-47ce-4fa4-a610-f286b08b8f61",
@@ -60,6 +68,22 @@
                 "id": "6b06f21b-fcbf-450e-9a80-e1a9b7bcb67a",
                 "resourcePath": "sounds\\sfxTE_GUI_Cursor\\sfxTE_GUI_Cursor.yy",
                 "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "0876f0b9-4265-4991-86c3-18dd5a15c21b",
+            "Value": {
+                "id": "02a51571-e744-4160-83e8-08d4de88977f",
+                "resourcePath": "views\\0876f0b9-4265-4991-86c3-18dd5a15c21b.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "08e020be-b634-4989-9fac-e6375fbe21cd",
+            "Value": {
+                "id": "008bcabd-5d19-4a99-909c-45be3e1732d2",
+                "resourcePath": "datafiles_yy\\scripts\\_macroTest.json.yy",
+                "resourceType": "GMIncludedFile"
             }
         },
         {
@@ -95,6 +119,14 @@
             }
         },
         {
+            "Key": "0d38dd95-5e97-42de-8765-8619860e6805",
+            "Value": {
+                "id": "d7564075-21e5-4062-a12f-5684cc1c8696",
+                "resourcePath": "datafiles_yy\\actors\\_woman\\idleUp.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "0ecad2b9-a7e4-4d61-ba49-4b1ac1bd4fa0",
             "Value": {
                 "id": "586703f6-91c0-4835-8adf-ec94ec557813",
@@ -108,6 +140,14 @@
                 "id": "2a598712-4e7c-4e0d-9f54-6681260cc557",
                 "resourcePath": "sprites\\sNPC_Default_Up\\sNPC_Default_Up.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "103431c1-7049-4e25-8ec9-fbcddf1cf324",
+            "Value": {
+                "id": "a82ee6c1-2e88-4467-b247-cae967ae9412",
+                "resourcePath": "datafiles_yy\\scripts\\_ralph.json.yy",
+                "resourceType": "GMIncludedFile"
             }
         },
         {
@@ -199,6 +239,14 @@
             }
         },
         {
+            "Key": "191f7bec-8ada-4614-961a-8642cbfa4f5e",
+            "Value": {
+                "id": "ce07d643-41a8-4d0b-8bd4-a40699c0379f",
+                "resourcePath": "views\\191f7bec-8ada-4614-961a-8642cbfa4f5e.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "1960db4d-31ce-4043-9143-91608d830812",
             "Value": {
                 "id": "08f26193-8997-4a48-9acd-5cf82db05bf3",
@@ -220,6 +268,14 @@
                 "id": "9956be8f-b141-47e7-a212-9d4b450f6ed9",
                 "resourcePath": "sprites\\sTE_Facetest\\sTE_Facetest.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "20e9f718-2811-4f0e-b245-65cf45f7b88c",
+            "Value": {
+                "id": "16674fb2-8dfb-429b-baff-ff1984690097",
+                "resourcePath": "datafiles_yy\\actors\\_woman\\idleRight.png.yy",
+                "resourceType": "GMIncludedFile"
             }
         },
         {
@@ -559,6 +615,14 @@
             }
         },
         {
+            "Key": "480607f1-13ac-4702-9978-582eb790f0e7",
+            "Value": {
+                "id": "51d2beab-7e49-4e77-a811-15232f6e8a22",
+                "resourcePath": "objects\\oEngine\\oEngine.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "494aaac4-b63d-4eee-b34a-810eb1023d76",
             "Value": {
                 "id": "e9fab7e8-2de1-4a5c-83d9-2ede78815ec5",
@@ -639,6 +703,14 @@
             }
         },
         {
+            "Key": "52707d7d-7cd7-40d3-a105-54f1d6efc1cd",
+            "Value": {
+                "id": "117780f6-1edb-4090-87f7-540ec151782c",
+                "resourcePath": "datafiles_yy\\actors\\_woman\\walkDown.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "52cfce86-a504-438b-8900-8c67baf6c14e",
             "Value": {
                 "id": "5d134e63-12e6-41e5-812e-eeeaa183e7de",
@@ -708,6 +780,22 @@
                 "id": "0b7a6916-b8b3-4fc8-a5c8-568250ec0bbf",
                 "resourcePath": "views\\5612eba1-e33d-48a7-b231-fae212110859.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "565eafc4-010f-440d-b136-df985a8b47fe",
+            "Value": {
+                "id": "d385bf07-16f0-4d86-b4c5-a1baebf22e3e",
+                "resourcePath": "scripts\\json_decode_file\\json_decode_file.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "576dd517-9cff-4134-8fbf-09808bf2080e",
+            "Value": {
+                "id": "8251d708-311f-4c33-b90e-99f9e807976e",
+                "resourcePath": "scripts\\RPG_game_restart\\RPG_game_restart.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1039,6 +1127,14 @@
             }
         },
         {
+            "Key": "83553bef-1fec-4f21-8b68-88a044e825cb",
+            "Value": {
+                "id": "2e45a51d-bdd7-48d2-9b9e-b6050f297939",
+                "resourcePath": "datafiles_yy\\items.json.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "83fbcef4-5173-4d38-af71-6ebc9dbebc9d",
             "Value": {
                 "id": "c46503fb-c826-432c-9245-e8828b233506",
@@ -1098,8 +1194,16 @@
             "Key": "8d2bf610-1034-4d6b-82f2-252ac38e3faf",
             "Value": {
                 "id": "08cae0e9-1a80-440e-928b-5726e385d374",
-                "resourcePath": "scripts\\TE_add_batch\\TE_add_batch.yy",
+                "resourcePath": "scripts\\TE_add_script_json\\TE_add_script_json.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "8dcf7622-b0fe-49a7-9ed7-8b24cf2cb991",
+            "Value": {
+                "id": "400b80c8-2a87-4f8e-80dc-9b92e78cd5b2",
+                "resourcePath": "rooms\\rInit\\rInit.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
@@ -1227,6 +1331,14 @@
             "Value": {
                 "id": "8757ca08-c981-41fa-a7e0-b1a08c75611e",
                 "resourcePath": "scripts\\INV_find_item\\INV_find_item.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "98c727ec-17b2-49cc-acd0-8bd6f327a2b7",
+            "Value": {
+                "id": "5286b0a9-1826-4527-ad26-6ba62e6eb027",
+                "resourcePath": "scripts\\NPC_load_script_json\\NPC_load_script_json.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1367,6 +1479,14 @@
             }
         },
         {
+            "Key": "aee1f4c1-8e75-4462-9368-e235bd98aa77",
+            "Value": {
+                "id": "79430f43-8dcd-4046-8747-3dd1c165c4c9",
+                "resourcePath": "datafiles_yy\\scripts\\_macroReccursive.json.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "af8525fa-2437-48be-ae53-65c7862584ca",
             "Value": {
                 "id": "92dba35a-9e7f-499e-bcf8-58bb3ae0cc4f",
@@ -1404,6 +1524,14 @@
                 "id": "ad7d13be-4143-42b1-8bee-5c2577391493",
                 "resourcePath": "sounds\\sfxTE_GUI_Open\\sfxTE_GUI_Open.yy",
                 "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "b6063936-a5d9-4d68-bfe7-62888b701783",
+            "Value": {
+                "id": "adf9f44b-a78f-4cc9-95f0-c1b9ff0b7561",
+                "resourcePath": "scripts\\TE_script_NPC_load_sprite\\TE_script_NPC_load_sprite.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1484,6 +1612,14 @@
                 "id": "7e2106f2-811d-4520-9e1f-12286b2aa9d7",
                 "resourcePath": "views\\bfe44756-535c-4513-a863-709d3eaf8ecc.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "c0324d03-375d-45f0-b95b-da04f3de39a6",
+            "Value": {
+                "id": "d3d20e2b-b404-4745-b266-1fafe84e82dc",
+                "resourcePath": "scripts\\TE_script_move\\TE_script_move.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1607,6 +1743,14 @@
             }
         },
         {
+            "Key": "cd48ad8d-b59d-47a6-8774-28a6060d27c8",
+            "Value": {
+                "id": "056c8ab6-3cc0-45d8-96a0-cdfe268dd796",
+                "resourcePath": "scripts\\NPC_add_script_json\\NPC_add_script_json.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "cd8ad830-fb59-4283-b3a6-73c587cad7bc",
             "Value": {
                 "id": "d3566732-3ee4-4bcb-a8e2-86c8c45a30e2",
@@ -1628,6 +1772,22 @@
                 "id": "a115e229-e89b-4add-a4c1-0da08c5a6601",
                 "resourcePath": "scripts\\nsp_evaluate_single\\nsp_evaluate_single.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "cffe4f6d-b054-46b4-bc9d-d0b0c02a2218",
+            "Value": {
+                "id": "e34079e6-a2c5-439d-b664-e9a1fad4f137",
+                "resourcePath": "scripts\\RPG_setup_camera\\RPG_setup_camera.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "d026a65d-878c-47f7-92db-15a158e24f81",
+            "Value": {
+                "id": "15e33c4c-82eb-4b76-a3c5-05e8b4cd7add",
+                "resourcePath": "datafiles_yy\\actors\\_woman\\walkLeft.png.yy",
+                "resourceType": "GMIncludedFile"
             }
         },
         {
@@ -1708,6 +1868,22 @@
                 "id": "2552acfa-aecd-49b2-a0e4-5e823cec10e4",
                 "resourcePath": "scripts\\nsp_variable_global_set\\nsp_variable_global_set.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "da445637-285a-459a-a042-77ece4c60bba",
+            "Value": {
+                "id": "180f76df-2dee-48c9-b108-789249756e3c",
+                "resourcePath": "datafiles_yy\\actors\\_woman\\idleLeft.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "dc67c158-4e88-4f07-95d1-68d2f5e8a96e",
+            "Value": {
+                "id": "e617c0d1-b4bc-4437-b5d4-8fae9655c18d",
+                "resourcePath": "datafiles_yy\\actors\\_woman\\walkRIght.png.yy",
+                "resourceType": "GMIncludedFile"
             }
         },
         {
@@ -1807,11 +1983,35 @@
             }
         },
         {
+            "Key": "ed1bad2a-f8fa-4d53-8455-dc027152241f",
+            "Value": {
+                "id": "2fbc4aef-282b-408c-a292-058c8b81b39b",
+                "resourcePath": "datafiles_yy\\actors\\_woman\\walkUp.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "ee4c439e-642a-44cd-9b5d-bb8d734c0aa3",
+            "Value": {
+                "id": "4a7f84ce-b8fe-4158-82e8-77fb4199b966",
+                "resourcePath": "views\\ee4c439e-642a-44cd-9b5d-bb8d734c0aa3.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "ee4d1113-ca07-4605-9687-0dcc8d498bdf",
             "Value": {
                 "id": "01c77b72-f6c4-4f2e-ae53-1e3d036f37b6",
                 "resourcePath": "scripts\\TE_script_DS_List_insert\\TE_script_DS_List_insert.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "f10114c3-f1c4-4ef4-8086-398483c02dd3",
+            "Value": {
+                "id": "ee207277-9fbd-4559-89c1-1ff9ea767148",
+                "resourcePath": "datafiles_yy\\actors\\_woman\\idleDown.png.yy",
+                "resourceType": "GMIncludedFile"
             }
         },
         {
@@ -1895,6 +2095,14 @@
             }
         },
         {
+            "Key": "fed940d8-8ddd-4acd-b643-0d0ed5a1c60a",
+            "Value": {
+                "id": "92f6412b-3d0c-46f2-a2f5-1f30f0031598",
+                "resourcePath": "scripts\\TE_script_create_json\\TE_script_create_json.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "ff0bf1d3-b249-4e7e-bd58-2730b37a5669",
             "Value": {
                 "id": "306d3590-0e5e-40d6-8c9a-b79e19068514",
@@ -1905,7 +2113,10 @@
     ],
     "script_order": [
         "5418e242-cea0-4e51-8099-55ed4de5e6af",
+        "565eafc4-010f-440d-b136-df985a8b47fe",
         "82aa3358-491e-4c0d-925b-9a854723f911",
+        "576dd517-9cff-4134-8fbf-09808bf2080e",
+        "cffe4f6d-b054-46b4-bc9d-d0b0c02a2218",
         "a0e2b883-3c6a-4cce-a6c5-003da09db76d",
         "bdd15844-a77d-48aa-864d-d6976b309996",
         "c37f3317-0fa3-4c81-a857-83059d6cb527",
@@ -1949,6 +2160,9 @@
         "f4c95fb4-40db-4366-b7eb-8e2f26c48183",
         "b02a2bbd-f430-4d36-91d3-eea9d7071666",
         "441bfe16-d5d1-459e-b711-513bbd0674a0",
+        "fed940d8-8ddd-4acd-b643-0d0ed5a1c60a",
+        "c0324d03-375d-45f0-b95b-da04f3de39a6",
+        "b6063936-a5d9-4d68-bfe7-62888b701783",
         "a108fce3-521b-4072-93eb-11cbaecb1df4",
         "49a48ddd-fd4d-471a-83ce-48779b696448",
         "38667840-383e-4bc1-9828-c7e406003445",
@@ -1967,6 +2181,8 @@
         "03a9b447-ac2f-4816-92b6-67762669d862",
         "3625ed56-a38b-48f6-8e8c-84da9c700f43",
         "6327a8fe-21c0-4ec3-81b8-0a01a4378792",
+        "98c727ec-17b2-49cc-acd0-8bd6f327a2b7",
+        "cd48ad8d-b59d-47a6-8774-28a6060d27c8",
         "5991477f-c8b5-4751-9ad3-913e47806d4f",
         "64f21ea0-fb7e-49d1-8d39-52da341d0436",
         "39f5f46c-e85e-4f7c-ae63-d63723137fd0",

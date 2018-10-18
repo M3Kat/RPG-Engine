@@ -1,0 +1,16 @@
+[
+	"Hey, we're using JSONS or some shit!",
+	"%IF[5,==,5]%%NEWLINE%",
+	"%{%",
+		"It's now much easier to write code, isn't it?%CHOICE[Ye,Nah]%",
+		"%IF[VAR.TE_CHOICE,==,0]%%NEWLINE%",
+		"%{%",
+			"Yep, much easier",
+		"%}%",
+		"%ELSE%",
+		"%{%",
+			"How could you?!? <:O",
+		"%}%",
+	"%}%",
+	"Guess I'm finished!"
+]

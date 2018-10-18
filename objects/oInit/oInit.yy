@@ -5,7 +5,17 @@
     "name": "oInit",
     "eventList": [
         {
-            "id": "c3c45f56-d97b-4bd9-9b69-71234f024619",
+            "id": "1316ed9c-c86b-4069-8110-177a6ebbee0c",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 123,
+            "eventtype": 9,
+            "m_owner": "c63462ca-5cbb-48fe-8e30-b042ac86690e"
+        },
+        {
+            "id": "14d8b460-2966-45eb-b12b-3fdea95e5ce5",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,

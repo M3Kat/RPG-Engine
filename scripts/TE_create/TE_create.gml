@@ -18,8 +18,8 @@ inst = instance_create_depth(0,0,0,oTE_Message);
 // If there is at least 4 arguments, resize text box
 if (arg >= 4)
 {
-	inst.surface_width	= argument[2] - argument[0];														// Set width of textbox
-	inst.surface_height	= argument[3] - argument[1];														// Set height of textbox
+	if (!is_undefined(argument[2])) inst.surface_width	= argument[2] - argument[0];						// Set width of textbox
+	if (!is_undefined(argument[3])) inst.surface_height	= argument[3] - argument[1];						// Set height of textbox
 	inst.surface_x		= argument[0];																		// Set x coordinates of textbox
 	inst.surface_y		= argument[1];																		// Set y coordinates of textbox
 }

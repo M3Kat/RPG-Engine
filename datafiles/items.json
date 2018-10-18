@@ -1,0 +1,18 @@
+{
+	"items" {
+		"null": {
+			"id": 0,
+			"name": "Bag of emptyness",
+			"description": "Contains absolutely nothing!",
+			"price": 1000,
+			"sell": 0
+		},
+		"apple": {
+			"id": 1,
+			"name": "Apple",
+			"description": "Fresh from the tree!",
+			"price": 15,
+			"sell": 5
+		},
+	}
+}

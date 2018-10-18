@@ -6,3 +6,5 @@
 
 global.actorSpriteMap		= ds_map_create();								// Global DS_MAP to store grids containing graphics for NPCs
 global.actorSpriteUniqueID	= ds_map_create();								// Stores external sprites ID to prevent duplicates
+
+surface_resize(application_surface, 320, 240);

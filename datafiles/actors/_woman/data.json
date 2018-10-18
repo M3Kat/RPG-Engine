@@ -1,0 +1,36 @@
+{
+	"global": {
+		"originX": 12,
+		"originY": 32
+	},
+	"idle": {
+		"sprites": [
+			"idleUp.png",
+			"idleRight.png",
+			"idleDown.png",
+			"idleLeft.png"
+			],
+		"animFrames": 1,
+		"animSpeed": 0
+	},
+	"walk": {
+		"sprites": [
+			"walkUp.png",
+			"walkRight.png",
+			"walkDown.png",
+			"walkLeft.png"
+			],
+		"animFrames": 4,
+		"animSpeed": 6
+	},
+	"jump": {
+		"sprites": [
+			"walkUp.png",
+			"walkRight.png",
+			"walkDown.png",
+			"walkLeft.png"
+			],
+		"animFrames": 4,
+		"animSpeed": 16
+	}
+}

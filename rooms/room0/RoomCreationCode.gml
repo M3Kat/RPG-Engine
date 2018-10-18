@@ -7,6 +7,7 @@ var txtid = TE_create();
 
 txtid.active = true;
 TE_add_line(txtid, "Welcome to RPG-ENGINE!%PAUSE%\nHope you have fun here!%CHOICE[:D,:(]%");
+TE_add_line(txtid, "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nAAA\nAAA\nAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAA\nAAAAAAAAAAAA\nAAAAAAAAAAAA");
 /*
 TE_add_line(txtid, "%NEWLINE%");
 TE_add_line(txtid, "%MACRO[_InventoryTest]%");

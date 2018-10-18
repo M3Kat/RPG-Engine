@@ -1,14 +1,22 @@
-/// @description Init all system
-// You can write your code in this editor
+TE/// @description Init the game and goto next room
 
-NSP_initialize();
+if (!variable_global_exists("init"))
+{
+	global.init = true;
+	
+	// Start the game
+	
+	NSP_initialize();
 
-RPG_init();
+	RPG_init();
 
-INV_init();
+	INV_init();
 
-TE_Init();
+	TE_Init();
 
-NPC_init();
+	NPC_init();
 
-ME_init();
+	ME_init();
+}
+
+room_goto_next();

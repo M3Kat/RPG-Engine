@@ -52,8 +52,9 @@ cursor_options      = 0;																											// Number of options availabl
 
 ask_char_array		= array_create(6,0); 
 
-parent				= noone;																										// Textbox's original caller
-child				= noone;																										// Textbox's newly executed
+parent_caller		= noone;																										// Original parent (NPC) of textbox
+parent				= noone;																										// Parent of textbox
+child				= noone;																										// Children of textbox
 
 condition[0]		= false;																										// Set result of condition on each bracket level
 

@@ -1,17 +1,13 @@
 /// @description Draw textbox
 // You can write your code in this editor
 
+view_set_visible(0, false);																						// Disable camera view
+
 TE_create_surface();																							// Recreate surface incase it's gone
 event_user(0);																									// TEMP RESIZE SURFACE
 surface_set_target(surface);																					// Set target to textbox surface
 draw_rectangle_color(0, 0, surface_width, surface_height, $ff8822, $ff6611, $aa6622, $aa6611, false);
 //draw_text_ext(0,0,string_display, 16, surface_width);															// Draw string inside surface
-#region Draw border
-
-	TE_draw_frame();
-
-#endregion
-
 
 #region Draw text
 
@@ -19,6 +15,8 @@ draw_rectangle_color(0, 0, surface_width, surface_height, $ff8822, $ff6611, $aa6
 
 	var swidth	= TE_BORDER_SIZE;																							// Current width
 	var sheight = TE_BORDER_SIZE;
+	var sheightfull	= 0;																						// Get current height of string
+	var sheightmod	= 0;																						// Number of pixel to higher text
 	var slength = ds_list_size(char_list);																		// Size of dslist 
 	
 	var swidthx1	= TE_BORDER_SIZE;
@@ -47,7 +45,7 @@ draw_rectangle_color(0, 0, surface_width, surface_height, $ff8822, $ff6611, $aa6
 		{
 			if (f_flip == 0)
 			{
-				draw_sprite_ext(face_sprite, face_subsprite, 0, 0, 1, 1, 0, c_white, 1);
+				//draw_sprite_ext(face_sprite, face_subsprite, 0, 0, 1, 1, 0, c_white, 1);
 			}
 			else
 			{
@@ -67,6 +65,19 @@ draw_rectangle_color(0, 0, surface_width, surface_height, $ff8822, $ff6611, $aa6
 				
 			}
 		}
+	}
+	
+	// Modify height of text rendering to fit rest of text in the bottom
+	if (line_copy != undefined)
+	{
+		var strcopy = string_copy(line_copy, 1, index_char);
+		var testlength = string_width(strcopy);
+		var testwidth = surface_width - TE_BORDER_SIZE*2 - f_width;
+		sheightfull = string_height_ext(strcopy, -1, testwidth);	// Get height of string if line_copy is not invalid
+	}
+	while ((sheightfull - sheightmod) > surface_height - TE_BORDER_SIZE * 2)
+	{
+		sheightmod += TE_CHAR_HEIGHT;																			// Decrement height to fit bottom of text
 	}
 	
 	for (i = 0; i < slength; i++)
@@ -136,10 +147,10 @@ draw_rectangle_color(0, 0, surface_width, surface_height, $ff8822, $ff6611, $aa6
 		switch (f_side)
 		{
 			case 0	:
-				draw_text_color(swidth + f_width - swidthmod , sheight, c_char, c_color,c_color,c_color,c_color, 1);
+				draw_text_color(swidth + f_width - swidthmod , sheight - sheightmod, c_char, c_color,c_color,c_color,c_color, 1);
 				break;
 			case 1	:
-				draw_text_color(swidth - swidthmod , sheight, c_char, c_color,c_color,c_color-$444444,c_color-$444444, 1);
+				draw_text_color(swidth - swidthmod , sheight - sheightmod, c_char, c_color,c_color,c_color-$444444,c_color-$444444, 1);
 				break;
 		}
 		
@@ -171,6 +182,12 @@ draw_rectangle_color(0, 0, surface_width, surface_height, $ff8822, $ff6611, $aa6
 	#endregion
 	
 #endregion
+
+#region Draw border
+
+	TE_draw_frame();
+
+#endregion
 	
 
 if (box_type == _teBoxType.Message && !instance_exists(child) && pause)
@@ -188,6 +205,8 @@ if (box_type == _teBoxType.AskReal)
 	draw_rectangle(TE_CHAR_HEIGHT*cursor_pos+TE_BORDER_SIZE-4,TE_BORDER_SIZE-4,TE_CHAR_HEIGHT*(cursor_pos+1)-1+TE_BORDER_SIZE-4,TE_CHAR_HEIGHT+TE_BORDER_SIZE, true);
 }
 surface_reset_target();																												// Return to application surface
+
+view_set_visible(0, true);																											// Reenable camera view
 
 var ssw = surface_width * surface_stretch_w;																						// Stretch w
 var ssh = surface_height * surface_stretch_h;																						// Stretch h
